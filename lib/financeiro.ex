@@ -12,9 +12,10 @@ defmodule Financeiro do
   """
   def main([]) do
     usuarios = [
-      # As 2 últimas casas representam as casas decimais.
-      john: %{BRL: 000, USD: 000},
-      stone: %{BRL: 000, USD: 000}
+      # Usuários de exemplo 
+      maria: Moeda.novo(),
+      stone: Moeda.novo(),
+      john: Moeda.novo()
     ]
     escolha = IO.gets "Sistema Financeiro\nDigite 1 para entrar ou 2 para criar um cadastro: "
     escolha = String.trim(escolha)
