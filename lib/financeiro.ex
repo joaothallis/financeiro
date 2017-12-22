@@ -31,6 +31,27 @@ defmodule Financeiro do
   end
 
   @doc """
+  Faz acesso a conta do usuário.
+
+  É feita uma verificação na estrutura de dados para confirmar se o usuário existe
+
+  """
+  def acessar(usuarios) do
+    usuario = IO.gets "Digite seu nome de usuário: "
+    usuario = string_atom(usuario)
+    # Verifica se o usuário existe
+    case Keyword.fetch(usuarios, usuario) do
+      :error ->
+        IO.puts "Usuário não existe."
+        acessar(usuarios)
+      _ ->
+        IO.puts "Acesso realizado com sucesso."
+        alternativas(usuarios, usuario)
+    end
+  end
+
+
+  @doc """
   Transforma uma string em atom
   
   """

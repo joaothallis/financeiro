@@ -16,7 +16,7 @@ defmodule Moeda do
 
   """
   def info() do
-    moedas = %{
+    moedas = [
       AED: %{nome: "UAE Dirham",                                             simbolo: "د.إ", expoente: 2},
       AFN: %{nome: "Afghani",                                                simbolo: "؋",    expoente: 2},
       ALL: %{nome: "Lek",                                                    simbolo: "Lek",  expoente: 2},
@@ -192,7 +192,7 @@ defmodule Moeda do
       ZAR: %{nome: "Rand",                                                   simbolo: "R",    expoente: 2},
       ZMK: %{nome: "Zambian Kwacha",                                         simbolo: "ZK",   expoente: 2},
       ZWL: %{nome: "Zimbabwe Dollar",                                        simbolo: "$",    expoente: 2}    
-    }
+    ]
   end 
   @doc """
   Lista com as moedas para a criação de novos usuários no sistema.
@@ -207,7 +207,7 @@ defmodule Moeda do
   
   """
   def novo do
-    novo = %{
+    novo = [
       AED: 0, 
       AFN: 0,
       ALL: 0,
@@ -383,6 +383,6 @@ defmodule Moeda do
       ZAR: 0,
       ZMK: 0,
       ZWL: 0
-    }
+    ]
   end
 end

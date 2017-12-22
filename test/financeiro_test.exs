@@ -9,6 +9,17 @@ defmodule FinanceiroTest do
   end
 
   test "converte string para atom" do
-    assert String.to_atom("john") == :john;
+    assert String.to_atom("john") == :john
+  end
+
+  test "verifica se usuário existe" do
+    usuarios = [
+      john: 0,
+      stone: 0,
+      maria: 0
+    ]
+    resultado = Keyword.fetch!(usuarios, :john)
+    assert resultado 
   end
 end
+
