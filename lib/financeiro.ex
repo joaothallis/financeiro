@@ -23,7 +23,7 @@ defmodule Financeiro do
       escolha == "1" ->
         acessar(usuarios)
       escolha == "2" ->
-        criar_usuario(usuarios)
+        Cadastro.cria_usuario(usuarios)
       true ->
         IO.puts "Digite apenas 1 ou 2"
         main([])
@@ -59,7 +59,7 @@ defmodule Financeiro do
     usuario = String.trim(usuario)
     usuario = String.to_atom(usuario)
   end
-
+  
   @doc """
   Opções que o usuário pode escolher.
 
