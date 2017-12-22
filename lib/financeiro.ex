@@ -69,6 +69,7 @@ defmodule Financeiro do
     cond do
       opcao == "1\n" ->
         Consulta.verifica_saldo(usuarios, usuario)
+        alternativas(usuarios, usuario)
       opcao == "2\n" ->
         Transacao.deposito(usuarios, usuario)
       opcao == "3\n" ->

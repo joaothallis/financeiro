@@ -17,6 +17,7 @@ defmodule Cadastro do
       _ ->
         "ok"
     end
+    # Converte 'usuário' de lista para string
     usuario = Enum.join(usuario)
     usuario = Financeiro.string_atom(usuario)
     case Keyword.fetch(usuarios, usuario) do
