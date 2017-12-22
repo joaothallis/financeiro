@@ -29,4 +29,14 @@ defmodule Financeiro do
         main([])
     end
   end
+
+  @doc """
+  Transforma uma string em atom
+  
+  """
+  def string_atom(usuario) do
+    usuario = String.trim(usuario)
+    usuario = String.to_atom(usuario)
+  end
+
 end

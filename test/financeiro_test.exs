@@ -7,4 +7,8 @@ defmodule FinanceiroTest do
     escolha = String.trim(escolha)
     assert escolha in ["1", "2"]
   end
+
+  test "converte string para atom" do
+    assert String.to_atom("john") == :john;
+  end
 end
