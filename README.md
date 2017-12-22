@@ -1,6 +1,6 @@
 # Financeiro
 
-Estrutura de dados para realizar operações financeiras com [Elixir](http://elixir-lang.github.io/). Estruturas de dados utilizando listas.
+Estrutura de dados para realizar operações financeiras com [Elixir](http://elixir-lang.github.io/).
 
 ## Requerimento
 
@@ -10,7 +10,7 @@ Estrutura de dados para realizar operações financeiras com [Elixir](http://eli
 
 Clone o projeto ou faça [download](https://github.com/joaothallis/financeiro.git) dele:
 
-```sh
+```git
 $ git clone https://github.com/joaothallis/financeiro.git
 ```
 
