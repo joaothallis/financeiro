@@ -52,7 +52,7 @@ defmodule Financeiro do
 
 
   @doc """
-  Transforma uma string em atom
+  Transforma uma string em atom.
   
   """
   def string_atom(usuario) do
@@ -70,9 +70,9 @@ defmodule Financeiro do
       opcao == "1\n" ->
         Consulta.verifica_saldo(usuarios, usuario)
       opcao == "2\n" ->
-        deposito(usuarios, usuario)
+        Transacao.deposito(usuarios, usuario)
       opcao == "3\n" ->
-        transferencia(usuarios, usuario)
+        Transacao.transferencia(usuarios, usuario)
       true ->
         IO.puts "Digite apenas 1, 2, 3 ou 4"
         alternativas(usuarios, usuario)

@@ -1,0 +1,10 @@
+{application,financeiro,
+             [{applications,[kernel,stdlib,elixir,logger]},
+              {description,"financeiro"},
+              {modules,['Elixir.Cadastro','Elixir.Financeiro',
+                        'Elixir.Financeiro.Application','Elixir.Moeda',
+                        'Elixir.Transacao']},
+              {registered,[]},
+              {vsn,"0.1.1"},
+              {extra_applications,[logger]},
+              {mod,{'Elixir.Financeiro.Application',[]}}]}.

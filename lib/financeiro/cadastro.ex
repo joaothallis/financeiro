@@ -1,10 +1,10 @@
 defmodule Cadastro do
   @moduledoc """
-  Forcene a função para criar novos usuários
+  Forcene a função para criar novos usuários.
   """
 
   @doc """
-  Cria um novo usuário para a estrutura de dados
+  Cria um novo usuário para a estrutura de dados.
 
   Novo usuário recebe uma lista com todas as moedas contendo o valor: 0.
 
