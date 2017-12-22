@@ -1,20 +1,34 @@
 # Financeiro
 
-Estrutura de dados para realizar operações financeiras com Elixir.
+Estrutura de dados para realizar operações financeiras com [Elixir](http://elixir-lang.github.io/). Estruturas de dados utilizando listas.
 
-## Instalação
+## Requerimento
 
-Se [disponível no Hex](https://hex.pm/docs/publish), o pacote pode ser instalado
-adicionando `financeiro` à sua lista de dependências em `mix.exs`:
+[Erlang](http://www.erlang.org/downloads)
 
-```elixir
-def deps do
-  [
-    {:financeiro, "~> 0.1.0"}
-  ]
-end
+## Como Começar
+
+Clone o projeto ou faça [download](https://github.com/joaothallis/financeiro.git) dele:
+
+```sh
+$ git clone https://github.com/joaothallis/financeiro.git
 ```
 
-A documentação pode ser gerada com [ExDoc](https://github.com/elixir-lang/ex_doc)
-e publicada em [HexDocs](https://hexdocs.pm). Uma vez publicado, os documentos podem
-ser encontrados em [https://hexdocs.pm/financeiro](https://hexdocs.pm/financeiro).
+Entre na pasta:
+
+```sh
+$ cd financeiro
+```
+
+Execute o programa:
+
+```
+$ ./financeiro
+```
+
+### Status do Código
+Em desenvolvimento.
+
+## Licensa
+[MIT License](https://en.wikipedia.org/wiki/MIT_License)
+
