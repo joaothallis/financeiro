@@ -60,4 +60,22 @@ defmodule Financeiro do
     usuario = String.to_atom(usuario)
   end
 
+  @doc """
+  Opções que o usuário pode escolher.
+
+  """
+  def alternativas(usuarios, usuario) do
+    opcao = IO.gets "Digite 1 para verificar saldo, 2 para realizar depósito, 3 para realizar transferência ou 4 para realizar câmbio de moedas: "
+    cond do
+      opcao == "1\n" ->
+        Consulta.verifica_saldo(usuarios, usuario)
+      opcao == "2\n" ->
+        deposito(usuarios, usuario)
+      opcao == "3\n" ->
+        transferencia(usuarios, usuario)
+      true ->
+        IO.puts "Digite apenas 1, 2, 3 ou 4"
+        alternativas(usuarios, usuario)
+    end
+  end
 end
