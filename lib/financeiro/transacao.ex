@@ -37,9 +37,17 @@ defmodule Transacao do
         IO.puts "Digite um valor positivo."
         deposito(usuario, usuario, moeda)
       end
-      usuarios = put_in(usuarios[usuario])[moeda],(usuarios[usuario])[moeda] + quantia
+      usuarios = put_in (usuarios[usuario])[moeda],(usuarios[usuario])[moeda] + quantia
       total = Keyword.get(usuarios[usuario], moeda)
       IO.puts "Seu saldo atual é de #{total} #{moeda}"
       Financeiro.alternativas(usuarios, usuario)
+    end
+
+    @doc """
+    Realiza transferência de dinheiro entre contas do sistema.
+
+    """
+    def transferencia(usuarios, usuario) do
+      IO.puts "a"
     end
 end
