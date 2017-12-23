@@ -28,12 +28,12 @@ $ ./financeiro
 
 ## Como Utilizar
 
-Quando iniciar o programa é possível entrar com uma conta ou criar uma nova.
-Ao criar uma conta, ela começa sem dinheiro. Para realizar transferências ou câmbio é necessário realizar um deposito em sua conta.
+Entre com uma conta ou crie uma nova.
+Ao criar uma conta, ela começa sem dinheiro. Para adicionar dinheiro realize um depósito, depois é possível realizar transferências e câmbio de moedas.
 
 ## Características
 
-- O código da moeda deve ser sempre um código válido [ISO4217] (https://www.iso.org/iso-4217-currency-codes.html).
+- O código da moeda deve ser sempre um código válido [ISO4217](https://www.iso.org/iso-4217-currency-codes.html).
 
 - Os montantes de dinheiro são representados como `Integer`. Exemplo: `R$ 1,00` equivale a `100`.
 

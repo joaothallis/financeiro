@@ -4,7 +4,7 @@ defmodule Transacao do
   
     """
     @doc """
-    Adiciona dinheiro a conta que está iniciada no sistema.
+    Verifica se o código da moeda é válido.
 
     """
     def cedula(usuarios, usuario) do
@@ -19,6 +19,10 @@ defmodule Transacao do
       deposito(usuarios, usuario, moeda)
     end
 
+    @doc """
+    Adiciona dinheiro a conta atual.
+
+    """
     def deposito(usuarios, usuario, moeda) do
       quantia = IO.gets "Quanto deseja depositar? "
       quantia = String.trim(quantia)
