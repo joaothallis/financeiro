@@ -26,9 +26,23 @@ Execute o programa:
 $ ./financeiro
 ```
 
+## Como Utilizar
+
+Quando iniciar o programa é possível entrar com uma conta ou criar uma nova.
+Ao criar uma conta, ela começa sem dinheiro. Para realizar transferências ou câmbio é necessário realizar um deposito em sua conta.
+
+## Características
+
+- O código da moeda deve ser sempre um código válido [ISO4217] (https://www.iso.org/iso-4217-currency-codes.html).
+
+- Os montantes de dinheiro são representados como `Integer`. Exemplo: `R$ 1,00` equivale a `100`.
+
+- Todas as funções aritméticas trabalham em `Integer`.
+
+- As transações de dinheiro só podem ser executadas quando ambos os operandos são da mesma moeda.
+
 ### Status do Código
 Em desenvolvimento.
 
 ## Licensa
 [MIT License](https://en.wikipedia.org/wiki/MIT_License)
-

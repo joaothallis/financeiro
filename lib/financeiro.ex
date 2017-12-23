@@ -17,6 +17,10 @@ defmodule Financeiro do
       stone: Moeda.novo(),
       john: Moeda.novo()
     ]
+    alfa(usuarios)
+  end
+
+  def alfa(usuarios) do
     escolha = IO.gets "Sistema Financeiro\nDigite 1 para entrar ou 2 para criar um cadastro: "
     escolha = String.trim(escolha)
     cond do
@@ -26,7 +30,7 @@ defmodule Financeiro do
         Cadastro.cria_usuario(usuarios)
       true ->
         IO.puts "Digite apenas 1 ou 2"
-        main([])
+        alfa(usuarios)
     end
   end
 
@@ -50,7 +54,6 @@ defmodule Financeiro do
     end
   end
 
-
   @doc """
   Transforma uma string em atom.
   
@@ -71,7 +74,7 @@ defmodule Financeiro do
         Consulta.verifica_saldo(usuarios, usuario)
         alternativas(usuarios, usuario)
       opcao == "2\n" ->
-        Transacao.deposito(usuarios, usuario)
+        Transacao.cedula(usuarios, usuario)
       opcao == "3\n" ->
         Transacao.transferencia(usuarios, usuario)
       true ->

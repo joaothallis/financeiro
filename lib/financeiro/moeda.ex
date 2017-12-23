@@ -15,7 +15,7 @@ defmodule Moeda do
     IRR: %{expoente: 2, nome: "Iranian Rial", simbolo: "﷼"},...
 
   """
-  def info() do
+  def info do
     moedas = [
       AED: %{nome: "UAE Dirham",                                             simbolo: "د.إ", expoente: 2},
       AFN: %{nome: "Afghani",                                                simbolo: "؋",    expoente: 2},

@@ -1,0 +1,10 @@
+=erl_crash_dump:0.3
+Fri Dec 22 15:40:08 2017
+Slogan: erl_child_setup closed
+System version: Erlang/OTP 20 [erts-9.1] [source] [64-bit] [smp:4:4] [ds:4:4:10] [async-threads:10] [hipe] [kernel-poll:false]
+Compiled: Tue Dec 19 21:57:24 2017
+Taints: erl_tracer,zlib
+Atoms: 12446
+Calling Thread: scheduler:4
+=scheduler:1
+Scheduler Sleep Info Flags: SLEEPING | TSE_SLEEPING

@@ -33,5 +33,11 @@ defmodule FinanceiroTest do
   test "converte string para atom" do
     assert String.to_atom("john") == :john
   end
-end
 
+  test "apenas números" do
+    quantia = "23232142\n"
+    quantia = String.trim(quantia)
+    assert quantia = String.to_integer(quantia)
+    assert quantia > 0
+  end
+end
