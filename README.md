@@ -42,7 +42,10 @@ Ao criar uma conta, ela começa sem dinheiro. Para adicionar dinheiro realize um
 - As transações de dinheiro só podem ser executadas quando ambos os operandos são da mesma moeda.
 
 ### Status do Código
-Em desenvolvimento.
+
+#### Integração Contínua
+
+[Semaphoreci](https://semaphoreci.com/joaothallis/financeiro)
 
 ## Licensa
 [MIT License](https://en.wikipedia.org/wiki/MIT_License)
