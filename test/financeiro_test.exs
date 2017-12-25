@@ -3,9 +3,8 @@ defmodule FinanceiroTest do
   doctest Financeiro
 
   test "testa escolha do usuário" do
-    escolha = IO.gets("Digite 1 ou 2\n")
-    escolha = String.trim(escolha)
-    assert escolha in ["1", "2"]
+    assert um = "1\n"
+    assert dois = "2\n"
   end
 
   test "verifica se usuário existe" do
