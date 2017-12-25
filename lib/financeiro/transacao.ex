@@ -33,21 +33,23 @@ defmodule Transacao do
           deposito(usuarios, usuario, moeda)
       end
       quantia = String.to_integer(quantia)
-      if quantia < 0 do
+      #nota = String.to_integer(quantia)
+      if quantia <= 0 do
         IO.puts "Digite um valor positivo."
-        deposito(usuario, usuario, moeda)
+        deposito(usuarios, usuario, moeda)
       end
-      usuarios = put_in (usuarios[usuario])[moeda],(usuarios[usuario])[moeda] + quantia
-      total = Keyword.get(usuarios[usuario], moeda)
-      IO.puts "Seu saldo atual é de #{total} #{moeda}"
-      Financeiro.alternativas(usuarios, usuario)
+        usuarios = put_in (usuarios[usuario])[moeda],(usuarios[usuario])[moeda] + quantia
+        total = Keyword.get(usuarios[usuario], moeda)
+        IO.puts "Seu saldo atual é de #{total} #{moeda}"
+        Financeiro.alternativas(usuarios, usuario)
     end
 
     @doc """
     Realiza transferência de dinheiro entre contas do sistema.
 
     """
+    #TODO: Sistema de transferência
     def transferencia(usuarios, usuario) do
-      IO.puts "a"
+
     end
 end
