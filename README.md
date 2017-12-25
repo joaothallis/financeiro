@@ -2,6 +2,8 @@
 
 Estrutura de dados para realizar operações financeiras com [Elixir](http://elixir-lang.github.io/).
 
+[![Build Status](https://semaphoreci.com/api/v1/joaothallis/financeiro/branches/master/badge.svg)](https://semaphoreci.com/joaothallis/financeiro)
+
 ## Requerimento
 
 [Erlang](http://www.erlang.org/downloads)
@@ -42,10 +44,9 @@ Ao criar uma conta, ela começa sem dinheiro. Para adicionar dinheiro realize um
 - As transações de dinheiro só podem ser executadas quando ambos os operandos são da mesma moeda.
 
 ### Status do Código
+Em desenvolvimento.
 
-#### Integração Contínua
-
-[Semaphoreci](https://semaphoreci.com/joaothallis/financeiro)
+[![Build Status](https://semaphoreci.com/api/v1/joaothallis/financeiro/branches/master/badge.svg)](https://semaphoreci.com/joaothallis/financeiro)
 
 ## Licensa
 [MIT License](https://en.wikipedia.org/wiki/MIT_License)
