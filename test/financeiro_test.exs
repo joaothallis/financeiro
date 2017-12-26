@@ -52,4 +52,17 @@ defmodule FinanceiroTest do
     usuario = put_in (usuario[:john])[:USD],(usuario[:john])[:USD] + 10
     assert usuario == [john: [USD: 10]]
   end
+
+  test "remove" do
+    usuario = [john: [USD: 60]]
+    usuario = put_in (usuario[:john])[:USD],(usuario[:john])[:USD] - 30
+    assert usuario == [john: [USD: 30]]
+  end
+
+  test "transfere" do
+    usuario = [john: [USD: 60], stone: [USD: 60]]
+    usuario = put_in (usuario[:john])[:USD],(usuario[:john])[:USD] - 30
+    usuario = put_in (usuario[:stone])[:USD],(usuario[:stone])[:USD] + 30
+    assert usuario == [john: [USD: 30], stone: [USD: 90]]
+  end 
 end

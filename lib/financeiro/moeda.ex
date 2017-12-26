@@ -199,11 +199,9 @@ defmodule Moeda do
 
   ## Exemplo
 
-  iex> usuario [
-  iex>   Pedro: Moeda.novo()
-  iex> ]
-  [Pedro: %{MGA: 0, IRR: 0, KHR: 0, GTQ: 0, BAM: 0, GBP: 0, BGN: 0, BOV: 0,
-   CLP: 0, SLL: 0, MUR: 0, XTS: 0, TOP: 0, QAR: 0, TTD: 0, ETB: 0, MWK: 0,...
+  iex> usuario[Pedro: Moeda.novo()]
+  [AED: 0, AFN: 0, ALL: 0, AMD: 0, ANG: 0, AOA: 0, ARS: 0, AUD: 0, AWG: 0, AZN: 0,
+   BAM: 0, BBD: 0, BDT: 0, BGN: 0, BHD: 0, BIF: 0, BMD: 0, BND: 0, BOB: 0, BOV: 0,...
   
   """
   def novo do

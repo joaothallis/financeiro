@@ -78,7 +78,7 @@ defmodule Financeiro do
         Transacao.cedula(usuarios, usuario, op)
       opcao == "3\n" ->
         op = "transferencia"
-        Transacao.cedula(usuarios, usuario, op)
+        Transacao.transferencia(usuarios, usuario, op)
       true ->
         IO.puts "Digite apenas 1, 2, 3 ou 4"
         alternativas(usuarios, usuario)

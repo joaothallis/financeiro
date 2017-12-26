@@ -5,6 +5,6 @@
                         'Elixir.Financeiro','Elixir.Financeiro.Application',
                         'Elixir.Moeda','Elixir.Transacao']},
               {registered,[]},
-              {vsn,"0.2.9"},
+              {vsn,"0.3.9"},
               {extra_applications,[logger]},
               {mod,{'Elixir.Financeiro.Application',[]}}]}.

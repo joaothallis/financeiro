@@ -17,9 +17,8 @@ defmodule Transacao do
     end
     if op == "deposito" do
       deposito(usuarios, usuario, moeda)
-    else
-      transferencia(usuarios, usuario, moeda)
     end
+    moeda
   end
 
   @doc """
@@ -50,8 +49,46 @@ defmodule Transacao do
   Realiza transferência de dinheiro entre contas do sistema.
 
   """
-  #TODO: Sistema de transferência
   def transferencia(usuarios, usuario, moeda) do
+    referido = IO.gets "Para qual conta deseja realizar a transferência: "
+    referido = Financeiro.string_atom(referido)
+    if referido == usuario do
+      IO.puts "Você não pode realizar transferência para sua conta. Para adicionar dinheiro a sua conta realize um deposito."
+      Financeiro.alternativas(usuarios, usuario)
+    end
+    case Keyword.fetch(usuarios, referido) do
+      :error ->
+        IO.puts "Essa conta não existe."
+        transferencia(usuarios, usuario, moeda)
+      _ -> :ok
+    end
+    op = "transferencia"
+    moeda = cedula(usuarios, usuario, op)
+    quantia = valor()
+    # Remove
+    usuarios = put_in (usuarios[usuario])[moeda],(usuarios[usuario])[moeda] - quantia
+    # Adiciona
+    usuarios = put_in (usuarios[referido])[moeda],(usuarios[referido])[moeda] + quantia
+    # Para verificar descomente as duas linhas abaixo
+    # referido = Keyword.get(usuarios[referido], moeda)
+    # IO.inspect referido
+    Financeiro.alternativas(usuarios, usuario)
+  end
 
+  def valor do
+    quantia = IO.gets "Quanto deseja transferir? "
+    quantia = String.trim(quantia)
+    case Integer.parse(quantia) do
+      {_num, ""} -> :ok
+      _ -> 
+        IO.puts "Digite apenas números."
+        valor()
+    end
+    quantia = String.to_integer(quantia)
+    if quantia <= 0 do
+      IO.puts "Digite um valor positivo."
+      valor()
+    end
+    quantia
   end
 end
