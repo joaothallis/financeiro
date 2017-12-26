@@ -8,6 +8,7 @@ defmodule Financeiro.Mixfile do
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
       deps: deps(),
+      test_coverage: [tool: Coverex.Task, coveralls: true]
     ]
   end
 
@@ -23,6 +24,7 @@ defmodule Financeiro.Mixfile do
   defp deps do
     [
       {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
+      {:coverex, "~> 1.4.10", only: :test}
     ]
   end
 end

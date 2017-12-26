@@ -96,9 +96,9 @@
   <td class="num"></td>
   <td class="elixir">
     
-      <a name="#Elixir.Transacao.cedula.2"></a>
+      <a name="#Elixir.Transacao.cedula.3"></a>
     
-    <pre class="irrelevant">    def cedula(usuarios, usuario) do
+    <pre class="irrelevant">    def cedula(usuarios, usuario, op) do
 </pre>
   </td>
 </tr>
@@ -127,14 +127,6 @@
   </td>
 </tr>
 <tr class="source"><td class="num"> 14</td>
-  <td class="num"></td>
-  <td class="elixir">
-    
-    <pre class="irrelevant">
-</pre>
-  </td>
-</tr>
-<tr class="source"><td class="num"> 15</td>
   <td class="num">0</td>
   <td class="elixir">
     
@@ -142,7 +134,7 @@
 </pre>
   </td>
 </tr>
-<tr class="source"><td class="num"> 16</td>
+<tr class="source"><td class="num"> 15</td>
   <td class="num">0</td>
   <td class="elixir">
     
@@ -150,15 +142,15 @@
 </pre>
   </td>
 </tr>
-<tr class="source"><td class="num"> 17</td>
+<tr class="source"><td class="num"> 16</td>
   <td class="num">0</td>
   <td class="elixir">
     
-    <pre class="not_covered">        cedula(usuarios, usuario)
+    <pre class="not_covered">        cedula(usuarios, usuario, op)
 </pre>
   </td>
 </tr>
-<tr class="source"><td class="num"> 18</td>
+<tr class="source"><td class="num"> 17</td>
   <td class="num"></td>
   <td class="elixir">
     
@@ -166,11 +158,19 @@
 </pre>
   </td>
 </tr>
+<tr class="source"><td class="num"> 18</td>
+  <td class="num">0</td>
+  <td class="elixir">
+    
+    <pre class="not_covered">      if op == "deposito" do
+</pre>
+  </td>
+</tr>
 <tr class="source"><td class="num"> 19</td>
   <td class="num">0</td>
   <td class="elixir">
     
-    <pre class="not_covered">      deposito(usuarios, usuario, moeda)
+    <pre class="not_covered">        deposito(usuarios, usuario, moeda)
 </pre>
   </td>
 </tr>
@@ -178,15 +178,15 @@
   <td class="num"></td>
   <td class="elixir">
     
-    <pre class="irrelevant">    end
+    <pre class="irrelevant">      else
 </pre>
   </td>
 </tr>
 <tr class="source"><td class="num"> 21</td>
-  <td class="num"></td>
+  <td class="num">0</td>
   <td class="elixir">
     
-    <pre class="irrelevant">
+    <pre class="not_covered">        transferencia(usuarios, usuario, moeda)
 </pre>
   </td>
 </tr>
@@ -194,7 +194,7 @@
   <td class="num"></td>
   <td class="elixir">
     
-    <pre class="irrelevant">    @doc """
+    <pre class="irrelevant">      end
 </pre>
   </td>
 </tr>
@@ -202,7 +202,7 @@
   <td class="num"></td>
   <td class="elixir">
     
-    <pre class="irrelevant">    Adiciona dinheiro a conta atual.
+    <pre class="irrelevant">    end
 </pre>
   </td>
 </tr>
@@ -218,11 +218,35 @@
   <td class="num"></td>
   <td class="elixir">
     
-    <pre class="irrelevant">    """
+    <pre class="irrelevant">    @doc """
 </pre>
   </td>
 </tr>
 <tr class="source"><td class="num"> 26</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">    Adiciona dinheiro a conta atual.
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 27</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 28</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">    """
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 29</td>
   <td class="num"></td>
   <td class="elixir">
     
@@ -232,7 +256,7 @@
 </pre>
   </td>
 </tr>
-<tr class="source"><td class="num"> 27</td>
+<tr class="source"><td class="num"> 30</td>
   <td class="num">0</td>
   <td class="elixir">
     
@@ -240,7 +264,7 @@
 </pre>
   </td>
 </tr>
-<tr class="source"><td class="num"> 28</td>
+<tr class="source"><td class="num"> 31</td>
   <td class="num">0</td>
   <td class="elixir">
     
@@ -248,7 +272,7 @@
 </pre>
   </td>
 </tr>
-<tr class="source"><td class="num"> 29</td>
+<tr class="source"><td class="num"> 32</td>
   <td class="num">0</td>
   <td class="elixir">
     
@@ -256,7 +280,7 @@
 </pre>
   </td>
 </tr>
-<tr class="source"><td class="num"> 30</td>
+<tr class="source"><td class="num"> 33</td>
   <td class="num"></td>
   <td class="elixir">
     
@@ -264,7 +288,7 @@
 </pre>
   </td>
 </tr>
-<tr class="source"><td class="num"> 31</td>
+<tr class="source"><td class="num"> 34</td>
   <td class="num"></td>
   <td class="elixir">
     
@@ -272,7 +296,7 @@
 </pre>
   </td>
 </tr>
-<tr class="source"><td class="num"> 32</td>
+<tr class="source"><td class="num"> 35</td>
   <td class="num">0</td>
   <td class="elixir">
     
@@ -280,7 +304,7 @@
 </pre>
   </td>
 </tr>
-<tr class="source"><td class="num"> 33</td>
+<tr class="source"><td class="num"> 36</td>
   <td class="num">0</td>
   <td class="elixir">
     
@@ -288,35 +312,11 @@
 </pre>
   </td>
 </tr>
-<tr class="source"><td class="num"> 34</td>
+<tr class="source"><td class="num"> 37</td>
   <td class="num"></td>
   <td class="elixir">
     
     <pre class="irrelevant">      end
-</pre>
-  </td>
-</tr>
-<tr class="source"><td class="num"> 35</td>
-  <td class="num">0</td>
-  <td class="elixir">
-    
-    <pre class="not_covered">      quantia = String.to_integer(quantia)
-</pre>
-  </td>
-</tr>
-<tr class="source"><td class="num"> 36</td>
-  <td class="num"></td>
-  <td class="elixir">
-    
-    <pre class="irrelevant">      #nota = String.to_integer(quantia)
-</pre>
-  </td>
-</tr>
-<tr class="source"><td class="num"> 37</td>
-  <td class="num">0</td>
-  <td class="elixir">
-    
-    <pre class="not_covered">      if quantia &lt;= 0 do
 </pre>
   </td>
 </tr>
@@ -324,7 +324,7 @@
   <td class="num">0</td>
   <td class="elixir">
     
-    <pre class="not_covered">        IO.puts "Digite um valor positivo."
+    <pre class="not_covered">      quantia = String.to_integer(quantia)
 </pre>
   </td>
 </tr>
@@ -332,15 +332,15 @@
   <td class="num">0</td>
   <td class="elixir">
     
-    <pre class="not_covered">        deposito(usuarios, usuario, moeda)
+    <pre class="not_covered">      if quantia &lt;= 0 do
 </pre>
   </td>
 </tr>
 <tr class="source"><td class="num"> 40</td>
-  <td class="num"></td>
+  <td class="num">0</td>
   <td class="elixir">
     
-    <pre class="irrelevant">      end
+    <pre class="not_covered">        IO.puts "Digite um valor positivo."
 </pre>
   </td>
 </tr>
@@ -348,15 +348,15 @@
   <td class="num">0</td>
   <td class="elixir">
     
-    <pre class="not_covered">        usuarios = put_in (usuarios[usuario])[moeda],(usuarios[usuario])[moeda] + quantia
+    <pre class="not_covered">        deposito(usuarios, usuario, moeda)
 </pre>
   </td>
 </tr>
 <tr class="source"><td class="num"> 42</td>
-  <td class="num">0</td>
+  <td class="num"></td>
   <td class="elixir">
     
-    <pre class="not_covered">        total = Keyword.get(usuarios[usuario], moeda)
+    <pre class="irrelevant">      end
 </pre>
   </td>
 </tr>
@@ -364,7 +364,7 @@
   <td class="num">0</td>
   <td class="elixir">
     
-    <pre class="not_covered">        IO.puts "Seu saldo atual é de #{total} #{moeda}"
+    <pre class="not_covered">        usuarios = put_in (usuarios[usuario])[moeda],(usuarios[usuario])[moeda] + quantia
 </pre>
   </td>
 </tr>
@@ -372,23 +372,23 @@
   <td class="num">0</td>
   <td class="elixir">
     
-    <pre class="not_covered">        Financeiro.alternativas(usuarios, usuario)
+    <pre class="not_covered">        total = Keyword.get(usuarios[usuario], moeda)
 </pre>
   </td>
 </tr>
 <tr class="source"><td class="num"> 45</td>
-  <td class="num"></td>
+  <td class="num">0</td>
   <td class="elixir">
     
-    <pre class="irrelevant">    end
+    <pre class="not_covered">        IO.puts "Seu saldo atual é de #{total} #{moeda}"
 </pre>
   </td>
 </tr>
 <tr class="source"><td class="num"> 46</td>
-  <td class="num"></td>
+  <td class="num">0</td>
   <td class="elixir">
     
-    <pre class="irrelevant">
+    <pre class="not_covered">        Financeiro.alternativas(usuarios, usuario)
 </pre>
   </td>
 </tr>
@@ -396,7 +396,7 @@
   <td class="num"></td>
   <td class="elixir">
     
-    <pre class="irrelevant">    @doc """
+    <pre class="irrelevant">    end
 </pre>
   </td>
 </tr>
@@ -404,7 +404,7 @@
   <td class="num"></td>
   <td class="elixir">
     
-    <pre class="irrelevant">    Realiza transferência de dinheiro entre contas do sistema.
+    <pre class="irrelevant">
 </pre>
   </td>
 </tr>
@@ -412,7 +412,7 @@
   <td class="num"></td>
   <td class="elixir">
     
-    <pre class="irrelevant">
+    <pre class="irrelevant">    @doc """
 </pre>
   </td>
 </tr>
@@ -420,7 +420,7 @@
   <td class="num"></td>
   <td class="elixir">
     
-    <pre class="irrelevant">    """
+    <pre class="irrelevant">    Realiza transferência de dinheiro entre contas do sistema.
 </pre>
   </td>
 </tr>
@@ -428,7 +428,7 @@
   <td class="num"></td>
   <td class="elixir">
     
-    <pre class="irrelevant">    #TODO: Sistema de transferência
+    <pre class="irrelevant">
 </pre>
   </td>
 </tr>
@@ -436,9 +436,7 @@
   <td class="num"></td>
   <td class="elixir">
     
-      <a name="#Elixir.Transacao.transferencia.2"></a>
-    
-    <pre class="irrelevant">    def transferencia(usuarios, usuario) do
+    <pre class="irrelevant">    """
 </pre>
   </td>
 </tr>
@@ -446,7 +444,7 @@
   <td class="num"></td>
   <td class="elixir">
     
-    <pre class="irrelevant">
+    <pre class="irrelevant">    #TODO: Sistema de transferência
 </pre>
   </td>
 </tr>
@@ -454,11 +452,29 @@
   <td class="num"></td>
   <td class="elixir">
     
-    <pre class="irrelevant">    end
+      <a name="#Elixir.Transacao.transferencia.3"></a>
+    
+    <pre class="irrelevant">    def transferencia(usuarios, usuario, moeda) do
 </pre>
   </td>
 </tr>
 <tr class="source"><td class="num"> 55</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 56</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">    end
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 57</td>
   <td class="num"></td>
   <td class="elixir">
     
