@@ -8,7 +8,7 @@ defmodule Financeiro.Mixfile do
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
       deps: deps(),
-      test_coverage: [tool: Coverex.Task, coveralls: true]
+      test_coverage: [tool: Coverex.Task]
     ]
   end
 
