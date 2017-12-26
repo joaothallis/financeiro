@@ -46,7 +46,6 @@ Ao criar uma conta, ela começa sem dinheiro. Para adicionar dinheiro realize um
 - Por padrão o usuário `stone` recebe a taxa de rateio.
 
 ### Status do Código
-Em desenvolvimento.
 
 [![Build Status](https://semaphoreci.com/api/v1/joaothallis/financeiro/branches/master/badge.svg)](https://semaphoreci.com/joaothallis/financeiro)
 

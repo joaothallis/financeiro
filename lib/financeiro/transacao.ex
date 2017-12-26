@@ -74,6 +74,7 @@ defmodule Transacao do
       Financeiro.alternativas(usuarios, usuario)
     end
     quantia = valor()
+    verifica_valor(usuarios, usuario, moeda, quantia)
     # Remove
     usuarios = put_in (usuarios[usuario])[moeda],(usuarios[usuario])[moeda] - quantia
     if referido != :stone do
@@ -81,7 +82,7 @@ defmodule Transacao do
     end
     # Adiciona
     usuarios = put_in (usuarios[referido])[moeda],(usuarios[referido])[moeda] + quantia
-    IO.puts "Você transferiu #{quantia} #{moeda} para #{referido}. " 
+    IO.puts "Você transferiu #{quantia} #{moeda} para #{referido}." 
     # Para verificar descomente as duas linhas abaixo
     # referido = Keyword.get(usuarios[referido], moeda)
     # IO.inspect referido
@@ -107,6 +108,17 @@ defmodule Transacao do
       valor()
     end
     quantia
+  end
+
+  @doc """
+  Verifica se o usuário possui o dinheiro que deseja transferir.
+
+  """
+  def verifica_valor(usuarios, usuario, moeda, quantia) do
+    if Keyword.get(usuarios[usuario], moeda) < quantia do
+      IO.puts "Você não possui essa quantia, faça um deposito antes de continuar."
+      Financeiro.alternativas(usuarios, usuario)
+    end
   end
 
   @doc """
