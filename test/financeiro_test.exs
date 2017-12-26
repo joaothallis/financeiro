@@ -74,5 +74,4 @@ defmodule FinanceiroTest do
   test "moeda com valor nulo" do
     assert Keyword.get([USD: 0], :USD) == 0
   end
-
 end
