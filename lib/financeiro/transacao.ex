@@ -2,7 +2,7 @@ defmodule Transacao do
   @moduledoc """
   Forcene a função para fazer transferências monetárias entre contas.
   """
-  
+
   @doc """
   Verifica se o código da moeda é válido.
 
@@ -76,6 +76,7 @@ defmodule Transacao do
     quantia = valor()
     # Remove
     usuarios = put_in (usuarios[usuario])[moeda],(usuarios[usuario])[moeda] - quantia
+    quantia = rateio(usuarios, moeda, quantia)
     # Adiciona
     usuarios = put_in (usuarios[referido])[moeda],(usuarios[referido])[moeda] + quantia
     # Para verificar descomente as duas linhas abaixo
@@ -103,5 +104,12 @@ defmodule Transacao do
       valor()
     end
     quantia
+  end
+
+  def rateio(usuarios, moeda, quantia) do
+    taxa = 10
+    split = round(quantia / taxa)
+    usuarios = put_in (usuarios[:stone])[moeda],(usuarios[:stone])[moeda] + split
+    quantia = quantia - split 
   end
 end

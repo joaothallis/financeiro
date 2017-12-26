@@ -11,7 +11,6 @@ defmodule FinanceiroTest do
     assert String.trim(dois) == "2"
     assert String.trim(tres) == "2"
     assert String.trim(quatro) == "1"
-    
   end
 
   test "verifica se usuário existe" do
@@ -73,5 +72,14 @@ defmodule FinanceiroTest do
 
   test "moeda com valor nulo" do
     assert Keyword.get([USD: 0], :USD) == 0
+  end
+
+  test "rateio" do
+    usuarios = [john: [USD: 100], stone: [USD: 0], maria: [USD: 0]]
+    split = round(100 / 10)
+    usuarios = put_in (usuarios[:stone])[:USD],(usuarios[:stone])[:USD] + split
+    assert usuarios == [john: [USD: 100], stone: [USD: 10], maria: [USD: 0]]
+    quantia = 100 - split
+    assert quantia == 90
   end
 end
