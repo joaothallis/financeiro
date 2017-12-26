@@ -50,6 +50,6 @@ defmodule FinanceiroTest do
   test "adiciona" do
     usuario = [john: [USD: 0]]
     usuario = put_in (usuario[:john])[:USD],(usuario[:john])[:USD] + 10
-    assert usuario = [john: [USD: 10]]
+    assert usuario == [john: [USD: 10]]
   end
 end
