@@ -1,0 +1,3135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Elixir.Moeda</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/source.css" type="text/css" media="screen" charset="utf-8" />
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+  </head>
+
+  <body>
+    <div id="content">
+      <h1>Elixir.Moeda Coverage Source Code</h1>
+
+      <table class="source">
+        <thead>
+          <tr>
+            <th>Line Number</th><th>Covered Lines</th><th>Source Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="source"><td class="num"> 1</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+      <a name="#Elixir.Moeda"></a>
+    
+    <pre class="irrelevant">defmodule Moeda do
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 2</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  @moduledoc """
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 3</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  Este módulo possui listas com informações sobre as moedas.
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 4</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  A lista está em compliance com o ISO 4217.
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 5</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  Acesse https://pt.wikipedia.org/wiki/ISO_4217 para saber mais.
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 6</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  """
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 7</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 8</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  @doc """
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 9</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  Lista as informações das moedas.
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 10</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 11</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  ## Exemplo
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 12</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 13</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  iex&gt; IO.inspect(Moeda.info(), limit: :infinity)
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 14</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  %{MGA: %{expoente: 2, nome: "Malagasy Ariary", simbolo: "Ar"},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 15</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">    IRR: %{expoente: 2, nome: "Iranian Rial", simbolo: "﷼"},...
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 16</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 17</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  """
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 18</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+      <a name="#Elixir.Moeda.info.0"></a>
+    
+    <pre class="irrelevant">  def info do
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 19</td>
+  <td class="num">0</td>
+  <td class="elixir">
+    
+    <pre class="not_covered">    moedas = [
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 20</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      AED: %{nome: "UAE Dirham",                                             simbolo: "د.إ", expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 21</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      AFN: %{nome: "Afghani",                                                simbolo: "؋",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 22</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ALL: %{nome: "Lek",                                                    simbolo: "Lek",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 23</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      AMD: %{nome: "Armenian Dram",                                          simbolo: "AMD",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 24</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ANG: %{nome: "Netherlands Antillian Guilder",                          simbolo: "ƒ",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 25</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      AOA: %{nome: "Kwanza",                                                 simbolo: "Kz",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 26</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ARS: %{nome: "Argentine Peso",                                         simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 27</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      AUD: %{nome: "Australian Dollar",                                      simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 28</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      AWG: %{nome: "Aruban Guilder",                                         simbolo: "ƒ",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 29</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      AZN: %{nome: "Azerbaijanian Manat",                                    simbolo: "ман",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 30</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BAM: %{nome: "Convertible Marks",                                      simbolo: "KM",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 31</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BBD: %{nome: "Barbados Dollar",                                        simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 32</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BDT: %{nome: "Taka",                                                   simbolo: "৳",     expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 33</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BGN: %{nome: "Bulgarian Lev",                                          simbolo: "лв",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 34</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BHD: %{nome: "Bahraini Dinar",                                         simbolo: ".د.ب", expoente: 3},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 35</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BIF: %{nome: "Burundi Franc",                                          simbolo: "FBu",  expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 36</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BMD: %{nome: "Bermudian Dollar (customarily known as Bermuda Dollar)", simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 37</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BND: %{nome: "Brunei Dollar",                                          simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 38</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BOB: %{nome: "Boliviano Mvdol",                                        simbolo: "$b",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 39</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BOV: %{nome: "Boliviano Mvdol",                                        simbolo: "$b",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 40</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BRL: %{nome: "Brazilian Real",                                         simbolo: "R$",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 41</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BSD: %{nome: "Bahamian Dollar",                                        simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 42</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BTN: %{nome: "Indian Rupee Ngultrum",                                  simbolo: "Nu.",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 43</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BWP: %{nome: "Pula",                                                   simbolo: "P",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 44</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BYR: %{nome: "Belarussian Ruble",                                      simbolo: "p.",   expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 45</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BZD: %{nome: "Belize Dollar",                                          simbolo: "BZ$",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 46</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CAD: %{nome: "Canadian Dollar",                                        simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 47</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CDF: %{nome: "Congolese Franc",                                        simbolo: "CF",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 48</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CHF: %{nome: "Swiss Franc",                                            simbolo: "CHF",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 49</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CLF: %{nome: "Chilean Peso Unidades de fomento",                       simbolo: "$",    expoente: 4},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 50</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CLP: %{nome: "Chilean Peso Unidades de fomento",                       simbolo: "$",    expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 51</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CNY: %{nome: "Yuan Renminbi",                                          simbolo: "¥",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 52</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      COP: %{nome: "Colombian Peso",                                         simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 53</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      COU: %{nome: "Colombian Peso Unidad de Valor Real",                    simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 54</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CRC: %{nome: "Costa Rican Colon",                                      simbolo: "₡",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 55</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CUC: %{nome: "Cuban Peso Peso Convertible",                            simbolo: "₱",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 56</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CUP: %{nome: "Cuban Peso Peso Convertible",                            simbolo: "₱",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 57</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CVE: %{nome: "Cape Verde Escudo",                                      simbolo: "$",    expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 58</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CZK: %{nome: "Czech Koruna",                                           simbolo: "Kč",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 59</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      DJF: %{nome: "Djibouti Franc",                                         simbolo: "Fdj",  expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 60</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      DKK: %{nome: "Danish Krone",                                           simbolo: "kr",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 61</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      DOP: %{nome: "Dominican Peso",                                         simbolo: "RD$",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 62</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      DZD: %{nome: "Algerian Dinar",                                         simbolo: "دج",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 63</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      EEK: %{nome: "Kroon",                                                  simbolo: "KR",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 64</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      EGP: %{nome: "Egyptian Pound",                                         simbolo: "£",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 65</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ERN: %{nome: "Nakfa",                                                  simbolo: "Nfk",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 66</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ETB: %{nome: "Ethiopian Birr",                                         simbolo: "Br",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 67</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      EUR: %{nome: "Euro",                                                   simbolo: "€",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 68</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      FJD: %{nome: "Fiji Dollar",                                            simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 69</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      FKP: %{nome: "Falkland Islands Pound",                                 simbolo: "£",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 70</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      GBP: %{nome: "Pound Sterling",                                         simbolo: "£",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 71</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      GEL: %{nome: "Lari",                                                   simbolo: "₾",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 72</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      GHS: %{nome: "Cedi",                                                   simbolo: "GH₵",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 73</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      GIP: %{nome: "Gibraltar Pound",                                        simbolo: "£",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 74</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      GMD: %{nome: "Dalasi",                                                 simbolo: "D",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 75</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      GNF: %{nome: "Guinea Franc",                                           simbolo: "FG",   expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 76</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      GTQ: %{nome: "Quetzal",                                                simbolo: "Q",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 77</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      GYD: %{nome: "Guyana Dollar",                                          simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 78</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      HKD: %{nome: "Hong Kong Dollar",                                       simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 79</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      HNL: %{nome: "Lempira",                                                simbolo: "L",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 80</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      HRK: %{nome: "Croatian Kuna",                                          simbolo: "kn",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 81</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      HTG: %{nome: "Gourde US Dollar",                                       simbolo: " ",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 82</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      HUF: %{nome: "Forint",                                                 simbolo: "Ft",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 83</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      IDR: %{nome: "Rupiah",                                                 simbolo: "Rp",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 84</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ILS: %{nome: "New Israeli Sheqel",                                     simbolo: "₪",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 85</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      INR: %{nome: "Indian Rupee",                                           simbolo: "₹",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 86</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      IQD: %{nome: "Iraqi Dinar",                                            simbolo: "‎ع.د",  expoente: 3},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 87</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      IRR: %{nome: "Iranian Rial",                                           simbolo: "﷼",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 88</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ISK: %{nome: "Iceland Krona",                                          simbolo: "kr",   expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 89</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      JMD: %{nome: "Jamaican Dollar",                                        simbolo: "J$",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 90</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      JOD: %{nome: "Jordanian Dinar",                                        simbolo: "JOD",  expoente: 3},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 91</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      JPY: %{nome: "Yen",                                                    simbolo: "¥",    expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 92</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KES: %{nome: "Kenyan Shilling",                                        simbolo: "KSh",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 93</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KGS: %{nome: "Som",                                                    simbolo: "лв",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 94</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KHR: %{nome: "Riel",                                                   simbolo: "៛",     expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 95</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KMF: %{nome: "Comoro Franc",                                           simbolo: "CF",   expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 96</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KPW: %{nome: "North Korean Won",                                       simbolo: "₩",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 97</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KRW: %{nome: "Won",                                                    simbolo: "₩",    expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 98</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KWD: %{nome: "Kuwaiti Dinar",                                          simbolo: "د.ك",  expoente: 3},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 99</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KYD: %{nome: "Cayman Islands Dollar",                                  simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 100</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KZT: %{nome: "Tenge",                                                  simbolo: "лв",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 101</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      LAK: %{nome: "Kip",                                                    simbolo: "₭",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 102</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      LBP: %{nome: "Lebanese Pound",                                         simbolo: "£",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 103</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      LKR: %{nome: "Sri Lanka Rupee",                                        simbolo: "₨",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 104</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      LRD: %{nome: "Liberian Dollar",                                        simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 105</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      LSL: %{nome: "Rand Loti",                                              simbolo: " ",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 106</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      LTL: %{nome: "Lithuanian Litas",                                       simbolo: "Lt",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 107</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      LVL: %{nome: "Latvian Lats",                                           simbolo: "Ls",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 108</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      LYD: %{nome: "Libyan Dinar",                                           simbolo: "ل.د",  expoente: 3},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 109</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MAD: %{nome: "Moroccan Dirham",                                        simbolo: "د.م.", expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 110</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MDL: %{nome: "Moldovan Leu",                                           simbolo: "MDL",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 111</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MGA: %{nome: "Malagasy Ariary",                                        simbolo: "Ar",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 112</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MKD: %{nome: "Denar",                                                  simbolo: "ден",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 113</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MMK: %{nome: "Kyat",                                                   simbolo: "K",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 114</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MNT: %{nome: "Tugrik",                                                 simbolo: "₮",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 115</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MOP: %{nome: "Pataca",                                                 simbolo: "MOP$", expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 116</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MRO: %{nome: "Ouguiya",                                                simbolo: "UM",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 117</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MUR: %{nome: "Mauritius Rupee",                                        simbolo: "₨",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 118</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MVR: %{nome: "Rufiyaa",                                                simbolo: "Rf",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 119</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MWK: %{nome: "Kwacha",                                                 simbolo: "MK",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 120</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MXN: %{nome: "Mexican Peso",                                           simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 121</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MXV: %{nome: "Mexican Peso Mexican Unidad de Inversion (UDI)",         simbolo: "UDI",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 122</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MYR: %{nome: "Malaysian Ringgit",                                      simbolo: "RM",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 123</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MZN: %{nome: "Metical",                                                simbolo: "MT",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 124</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      NAD: %{nome: "Rand Namibia Dollar",                                    simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 125</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      NGN: %{nome: "Naira",                                                  simbolo: "₦",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 126</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      NIO: %{nome: "Cordoba Oro",                                            simbolo: "C$",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 127</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      NOK: %{nome: "Norwegian Krone",                                        simbolo: "kr",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 128</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      NPR: %{nome: "Nepalese Rupee",                                         simbolo: "₨",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 129</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      NZD: %{nome: "New Zealand Dollar",                                     simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 130</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      OMR: %{nome: "Rial Omani",                                             simbolo: "﷼",   expoente: 3},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 131</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      PAB: %{nome: "Balboa US Dollar",                                       simbolo: "B/.",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 132</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      PEN: %{nome: "Nuevo Sol",                                              simbolo: "S/.",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 133</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      PGK: %{nome: "Kina",                                                   simbolo: "K",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 134</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      PHP: %{nome: "Philippine Peso",                                        simbolo: "Php",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 135</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      PKR: %{nome: "Pakistan Rupee",                                         simbolo: "₨",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 136</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      PLN: %{nome: "Zloty",                                                  simbolo: "zł",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 137</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      PYG: %{nome: "Guarani",                                                simbolo: "Gs",   expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 138</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      QAR: %{nome: "Qatari Rial",                                            simbolo: "﷼",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 139</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      RON: %{nome: "New Leu",                                                simbolo: "lei",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 140</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      RSD: %{nome: "Serbian Dinar",                                          simbolo: "Дин.", expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 141</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      RUB: %{nome: "Russian Ruble",                                          simbolo: "₽",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 142</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      RWF: %{nome: "Rwanda Franc",                                           simbolo: " ",    expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 143</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SAR: %{nome: "Saudi Riyal",                                            simbolo: "﷼",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 144</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SBD: %{nome: "Solomon Islands Dollar",                                 simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 145</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SCR: %{nome: "Seychelles Rupee",                                       simbolo: "₨",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 146</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SDG: %{nome: "Sudanese Pound",                                         simbolo: "SDG",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 147</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SEK: %{nome: "Swedish Krona",                                          simbolo: "kr",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 148</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SGD: %{nome: "Singapore Dollar",                                       simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 149</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SHP: %{nome: "Saint Helena Pound",                                     simbolo: "£",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 150</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SLL: %{nome: "Leone",                                                  simbolo: "Le",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 151</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SOS: %{nome: "Somali Shilling",                                        simbolo: "S",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 152</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SRD: %{nome: "Surinam Dollar",                                         simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 153</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      STD: %{nome: "Dobra",                                                  simbolo: "Db",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 154</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SVC: %{nome: "El Salvador Colon US Dollar",                            simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 155</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SYP: %{nome: "Syrian Pound",                                           simbolo: "£",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 156</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SZL: %{nome: "Lilangeni",                                              simbolo: "E",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 157</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      THB: %{nome: "Baht",                                                   simbolo: "฿",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 158</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      TJS: %{nome: "Somoni",                                                 simbolo: " ",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 159</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      TMT: %{nome: "Manat",                                                  simbolo: "₼",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 160</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      TND: %{nome: "Tunisian Dinar",                                         simbolo: "د.ت",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 161</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      TOP: %{nome: "Pa'anga",                                                simbolo: "T$",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 162</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      TRY: %{nome: "Turkish Lira",                                           simbolo: "TL",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 163</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      TTD: %{nome: "Trinidad and Tobago Dollar",                             simbolo: "TT$",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 164</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      TWD: %{nome: "New Taiwan Dollar",                                      simbolo: "NT$",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 165</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      TZS: %{nome: "Tanzanian Shilling",                                     simbolo: "Tsh",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 166</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      UAH: %{nome: "Hryvnia",                                                simbolo: "₴",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 167</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      UGX: %{nome: "Uganda Shilling",                                        simbolo: "Ush",  expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 168</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      USD: %{nome: "US Dollar",                                              simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 169</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      UYI: %{nome: "Peso Uruguayo Uruguay Peso en Unidades Indexadas",       simbolo: "$U",   expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 170</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      UYU: %{nome: "Peso Uruguayo Uruguay Peso en Unidades Indexadas",       simbolo: "$U",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 171</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      UZS: %{nome: "Uzbekistan Sum",                                         simbolo: "лв",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 172</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      VEF: %{nome: "Bolivar Fuerte",                                         simbolo: "Bs",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 173</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      VND: %{nome: "Dong",                                                   simbolo: "₫",    expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 174</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      VUV: %{nome: "Vatu",                                                   simbolo: "VT",   expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 175</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      WST: %{nome: "Tala",                                                   simbolo: "WS$",  expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 176</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XAF: %{nome: "CFA Franc BEAC",                                         simbolo: "FCFA", expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 177</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XAG: %{nome: "Silver",                                                 simbolo: " ",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 178</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XAU: %{nome: "Gold",                                                   simbolo: " ",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 179</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XBA: %{nome: "Bond Markets Units European Composite Unit (EURCO)",     simbolo: " ",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 180</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XBB: %{nome: "European Monetary Unit (E.M.U.-6)",                      simbolo: " ",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 181</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XBC: %{nome: "European Unit of Account 9(E.U.A.-9)",                   simbolo: " ",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 182</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XBD: %{nome: "European Unit of Account 17(E.U.A.-17)",                 simbolo: " ",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 183</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XCD: %{nome: "East Caribbean Dollar",                                  simbolo: "$",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 184</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XDR: %{nome: "SDR",                                                    simbolo: " ",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 185</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XFU: %{nome: "UIC-Franc",                                              simbolo: " ",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 186</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XOF: %{nome: "CFA Franc BCEAO",                                        simbolo: " ",    expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 187</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XPD: %{nome: "Palladium",                                              simbolo: " ",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 188</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XPF: %{nome: "CFP Franc",                                              simbolo: " ",    expoente: 0},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 189</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XPT: %{nome: "Platinum",                                               simbolo: " ",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 190</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XTS: %{nome: "Codes specifically reserved for testing purposes",       simbolo: " ",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 191</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      YER: %{nome: "Yemeni Rial",                                            simbolo: "﷼",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 192</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ZAR: %{nome: "Rand",                                                   simbolo: "R",    expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 193</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ZMK: %{nome: "Zambian Kwacha",                                         simbolo: "ZK",   expoente: 2},
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 194</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ZWL: %{nome: "Zimbabwe Dollar",                                        simbolo: "$",    expoente: 2}    
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 195</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">    ]
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 196</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  end 
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 197</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  @doc """
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 198</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  Lista com as moedas para a criação de novos usuários no sistema.
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 199</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 200</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  ## Exemplo
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 201</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 202</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  iex&gt; usuario [
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 203</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  iex&gt;   Pedro: Moeda.novo()
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 204</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  iex&gt; ]
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 205</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  [Pedro: %{MGA: 0, IRR: 0, KHR: 0, GTQ: 0, BAM: 0, GBP: 0, BGN: 0, BOV: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 206</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">   CLP: 0, SLL: 0, MUR: 0, XTS: 0, TOP: 0, QAR: 0, TTD: 0, ETB: 0, MWK: 0,...
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 207</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 208</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  """
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 209</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+      <a name="#Elixir.Moeda.novo.0"></a>
+    
+    <pre class="irrelevant">  def novo do
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 210</td>
+  <td class="num">0</td>
+  <td class="elixir">
+    
+    <pre class="not_covered">    novo = [
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 211</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      AED: 0, 
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 212</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      AFN: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 213</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ALL: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 214</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      AMD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 215</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ANG: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 216</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      AOA: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 217</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ARS: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 218</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      AUD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 219</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      AWG: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 220</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      AZN: 0, 
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 221</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BAM: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 222</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BBD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 223</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BDT: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 224</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BGN: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 225</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BHD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 226</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BIF: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 227</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BMD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 228</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BND: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 229</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BOB: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 230</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BOV: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 231</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BRL: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 232</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BSD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 233</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BTN: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 234</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BWP: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 235</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BYR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 236</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      BZD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 237</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CAD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 238</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CDF: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 239</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CHF: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 240</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CLF: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 241</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CLP: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 242</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CNY: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 243</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      COP: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 244</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      COU: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 245</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CRC: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 246</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CUC: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 247</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CUP: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 248</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CVE: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 249</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      CZK: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 250</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      DJF: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 251</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      DKK: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 252</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      DOP: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 253</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      DZD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 254</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      EEK: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 255</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      EGP: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 256</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ERN: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 257</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ETB: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 258</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      EUR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 259</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      FJD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 260</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      FKP: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 261</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      GBP: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 262</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      GEL: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 263</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      GHS: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 264</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      GIP: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 265</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      GMD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 266</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      GNF: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 267</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      GTQ: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 268</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      GYD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 269</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      HKD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 270</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      HNL: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 271</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      HRK: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 272</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      HTG: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 273</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      HUF: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 274</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      IDR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 275</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ILS: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 276</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      INR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 277</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      IQD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 278</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      IRR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 279</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ISK: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 280</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      JMD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 281</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      JOD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 282</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      JPY: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 283</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KES: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 284</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KGS: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 285</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KHR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 286</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KMF: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 287</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KPW: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 288</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KRW: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 289</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KWD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 290</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KYD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 291</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      KZT: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 292</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      LAK: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 293</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      LBP: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 294</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      LKR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 295</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      LRD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 296</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      LSL: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 297</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      LTL: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 298</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      LVL: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 299</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      LYD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 300</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MAD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 301</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MDL: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 302</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MGA: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 303</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MKD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 304</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MMK: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 305</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MNT: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 306</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MOP: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 307</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MRO: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 308</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MUR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 309</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MVR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 310</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MWK: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 311</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MXN: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 312</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MXV: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 313</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MYR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 314</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      MZN: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 315</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      NAD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 316</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      NGN: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 317</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      NIO: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 318</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      NOK: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 319</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      NPR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 320</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      NZD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 321</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      OMR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 322</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      PAB: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 323</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      PEN: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 324</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      PGK: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 325</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      PHP: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 326</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      PKR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 327</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      PLN: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 328</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      PYG: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 329</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      QAR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 330</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      RON: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 331</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      RSD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 332</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      RUB: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 333</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      RWF: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 334</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SAR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 335</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SBD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 336</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SCR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 337</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SDG: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 338</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SEK: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 339</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SGD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 340</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SHP: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 341</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SLL: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 342</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SOS: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 343</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SRD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 344</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      STD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 345</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SVC: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 346</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SYP: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 347</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      SZL: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 348</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      THB: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 349</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      TJS: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 350</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      TMT: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 351</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      TND: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 352</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      TOP: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 353</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      TRY: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 354</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      TTD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 355</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      TWD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 356</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      TZS: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 357</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      UAH: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 358</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      UGX: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 359</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      USD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 360</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      UYI: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 361</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      UYU: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 362</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      UZS: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 363</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      VEF: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 364</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      VND: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 365</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      VUV: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 366</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      WST: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 367</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XAF: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 368</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XAG: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 369</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XAU: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 370</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XBA: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 371</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XBB: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 372</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XBC: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 373</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XBD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 374</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XCD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 375</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XDR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 376</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XFU: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 377</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XOF: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 378</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XPD: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 379</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XPF: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 380</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XPT: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 381</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      XTS: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 382</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      YER: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 383</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ZAR: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 384</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ZMK: 0,
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 385</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">      ZWL: 0
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 386</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">    ]
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 387</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">  end
+</pre>
+  </td>
+</tr>
+<tr class="source"><td class="num"> 388</td>
+  <td class="num"></td>
+  <td class="elixir">
+    
+    <pre class="irrelevant">end</pre>
+  </td>
+</tr>
+
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

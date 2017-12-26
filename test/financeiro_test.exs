@@ -3,8 +3,15 @@ defmodule FinanceiroTest do
   doctest Financeiro
 
   test "testa escolha do usuário" do
-    assert um = "1\n"
-    assert dois = "2\n"
+    um = " 1\n"
+    dois = "2\n "
+    tres = " 2\n "
+    quatro = "1\n"
+    assert String.trim(um) == "1"
+    assert String.trim(dois) == "2"
+    assert String.trim(tres) == "2"
+    assert String.trim(quatro) == "1"
+    
   end
 
   test "verifica se usuário existe" do

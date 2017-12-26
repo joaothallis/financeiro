@@ -11,7 +11,6 @@ defmodule Transacao do
       moeda = IO.gets "Qual moeda? "
       moeda = String.upcase(moeda)
       moeda = Financeiro.string_atom(moeda)
-
       unless Keyword.get(usuarios[usuario], moeda) do
         IO.puts "Digite uma sigla válida."
         cedula(usuarios, usuario)
@@ -33,7 +32,6 @@ defmodule Transacao do
           deposito(usuarios, usuario, moeda)
       end
       quantia = String.to_integer(quantia)
-      #nota = String.to_integer(quantia)
       if quantia <= 0 do
         IO.puts "Digite um valor positivo."
         deposito(usuarios, usuario, moeda)

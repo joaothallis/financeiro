@@ -1,5 +1,5 @@
 {application,financeiro,
-             [{applications,[kernel,stdlib,elixir,logger]},
+             [{applications,[kernel,stdlib,elixir,logger,coverex]},
               {description,"financeiro"},
               {modules,['Elixir.Cadastro','Elixir.Consulta',
                         'Elixir.Financeiro','Elixir.Financeiro.Application',

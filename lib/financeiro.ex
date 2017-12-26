@@ -22,10 +22,11 @@ defmodule Financeiro do
 
   def alfa(usuarios) do
     escolha = IO.gets "Sistema Financeiro\nDigite 1 para entrar ou 2 para criar um cadastro: "
+    escolha = String.trim(escolha)
     cond do
-      escolha == "1\n" ->
+      escolha == "1" ->
         acessar(usuarios)
-      escolha == "2\n" ->
+      escolha == "2" ->
         Cadastro.cria_usuario(usuarios)
       true ->
         IO.puts "Digite apenas 1 ou 2"
