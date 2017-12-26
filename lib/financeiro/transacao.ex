@@ -50,6 +50,11 @@ defmodule Transacao do
 
   """
   def transferencia(usuarios, usuario, moeda) do
+    total = Keyword.values(usuarios[usuario])
+    if Enum.sum(total) <= 0 do
+      IO.puts "Você não possui dinheiro, faça um deposito antes de continuar"
+      Financeiro.alternativas(usuarios, usuario)
+    end
     referido = IO.gets "Para qual conta deseja realizar a transferência: "
     referido = Financeiro.string_atom(referido)
     if referido == usuario do
@@ -64,6 +69,10 @@ defmodule Transacao do
     end
     op = "transferencia"
     moeda = cedula(usuarios, usuario, op)
+    if Keyword.get(usuarios[usuario], moeda) <= 0 do
+      IO.puts "Você não possui quantia com essa moeda, faça um deposito antes de continuar."
+      Financeiro.alternativas(usuarios, usuario)
+    end
     quantia = valor()
     # Remove
     usuarios = put_in (usuarios[usuario])[moeda],(usuarios[usuario])[moeda] - quantia
@@ -76,7 +85,7 @@ defmodule Transacao do
   end
 
   @doc """
-  Valida entrada do usuário para aceitar apenas inteiros positivo.
+  Valida entrada do usuário para aceitar apenas números inteiros positivos.
 
   """
   def valor do

@@ -65,4 +65,14 @@ defmodule FinanceiroTest do
     usuario = put_in (usuario[:stone])[:USD],(usuario[:stone])[:USD] + 30
     assert usuario == [john: [USD: 30], stone: [USD: 90]]
   end 
+
+  test "não possui dinheiro" do
+    total = Keyword.values([BRL: 0, USD: 0])
+    assert Enum.sum(total) <= 0
+  end
+
+  test "moeda com valor nulo" do
+    assert Keyword.get([USD: 0], :USD) == 0
+  end
+
 end
