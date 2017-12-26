@@ -76,9 +76,12 @@ defmodule Transacao do
     quantia = valor()
     # Remove
     usuarios = put_in (usuarios[usuario])[moeda],(usuarios[usuario])[moeda] - quantia
-    quantia = rateio(usuarios, moeda, quantia)
+    if referido != :stone do
+      quantia = rateio(usuarios, moeda, quantia)
+    end
     # Adiciona
     usuarios = put_in (usuarios[referido])[moeda],(usuarios[referido])[moeda] + quantia
+    IO.puts "Você transferiu #{quantia} #{moeda} para #{referido}. " 
     # Para verificar descomente as duas linhas abaixo
     # referido = Keyword.get(usuarios[referido], moeda)
     # IO.inspect referido
@@ -106,10 +109,17 @@ defmodule Transacao do
     quantia
   end
 
+  @doc """
+  Realiza a operação de rateio de valores.
+
+  Por padrão :stone quem recebe parte da divisão.
+
+  """
   def rateio(usuarios, moeda, quantia) do
     taxa = 10
     split = round(quantia / taxa)
     usuarios = put_in (usuarios[:stone])[moeda],(usuarios[:stone])[moeda] + split
-    quantia = quantia - split 
+    IO.write "Taxa de rateio de #{taxa}% para stone. "
+    quantia - split 
   end
 end
