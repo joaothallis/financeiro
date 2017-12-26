@@ -75,6 +75,10 @@ defmodule Transacao do
     Financeiro.alternativas(usuarios, usuario)
   end
 
+  @doc """
+  Valida entrada do usuário para aceitar apenas inteiros positivo.
+
+  """
   def valor do
     quantia = IO.gets "Quanto deseja transferir? "
     quantia = String.trim(quantia)
