@@ -43,6 +43,8 @@ Ao criar uma conta, ela começa sem dinheiro. Para adicionar dinheiro realize um
 
 - As transações de dinheiro só podem ser executadas quando ambos os operandos são da mesma moeda.
 
+- Por padrão o usuário `stone` recebe a taxa de rateio.
+
 ### Status do Código
 Em desenvolvimento.
 
