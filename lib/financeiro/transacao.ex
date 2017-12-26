@@ -7,15 +7,19 @@ defmodule Transacao do
     Verifica se o código da moeda é válido.
 
     """
-    def cedula(usuarios, usuario) do
+    def cedula(usuarios, usuario, op) do
       moeda = IO.gets "Qual moeda? "
       moeda = String.upcase(moeda)
       moeda = Financeiro.string_atom(moeda)
       unless Keyword.get(usuarios[usuario], moeda) do
         IO.puts "Digite uma sigla válida."
-        cedula(usuarios, usuario)
+        cedula(usuarios, usuario, op)
       end
-      deposito(usuarios, usuario, moeda)
+      if op == "deposito" do
+        deposito(usuarios, usuario, moeda)
+      else
+        transferencia(usuarios, usuario, moeda)
+      end
     end
 
     @doc """
@@ -47,7 +51,7 @@ defmodule Transacao do
 
     """
     #TODO: Sistema de transferência
-    def transferencia(usuarios, usuario) do
+    def transferencia(usuarios, usuario, moeda) do
 
     end
 end

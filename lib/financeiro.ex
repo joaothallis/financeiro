@@ -74,9 +74,11 @@ defmodule Financeiro do
         Consulta.verifica_saldo(usuarios, usuario)
         alternativas(usuarios, usuario)
       opcao == "2\n" ->
-        Transacao.cedula(usuarios, usuario)
+        op = "deposito"
+        Transacao.cedula(usuarios, usuario, op)
       opcao == "3\n" ->
-        Transacao.transferencia(usuarios, usuario)
+        op = "transferencia"
+        Transacao.cedula(usuarios, usuario, op)
       true ->
         IO.puts "Digite apenas 1, 2, 3 ou 4"
         alternativas(usuarios, usuario)
