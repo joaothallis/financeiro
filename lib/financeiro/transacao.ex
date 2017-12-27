@@ -77,8 +77,9 @@ defmodule Transacao do
     verifica_valor(usuarios, usuario, moeda, quantia)
     # Remove
     usuarios = put_in (usuarios[usuario])[moeda],(usuarios[usuario])[moeda] - quantia
+    quantia = 
     if referido != :stone do
-      quantia = rateio(usuarios, moeda, quantia)
+      rateio(usuarios, moeda, quantia)
     end
     # Adiciona
     usuarios = put_in (usuarios[referido])[moeda],(usuarios[referido])[moeda] + quantia
