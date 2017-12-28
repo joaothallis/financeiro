@@ -7,8 +7,6 @@ defmodule Financeiro do
   @doc """
   Inicia o sistema financeiro.
 
-  
-
   """
   def main([]) do
     usuarios = [
@@ -63,8 +61,7 @@ defmodule Financeiro do
   
   """
   def string_atom(usuario) do
-    usuario = String.trim(usuario)
-    usuario = String.to_atom(usuario)
+    String.trim(usuario) |> String.to_atom(usuario)
   end
   
   @doc """
