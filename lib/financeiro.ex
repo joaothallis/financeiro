@@ -41,7 +41,7 @@ defmodule Financeiro do
   @doc """
   Faz acesso a conta do usuário.
 
-  É feita uma verificação na estrutura de dados para confirmar se o usuário existe
+  É feita uma verificação na estrutura de dados para confirmar se o usuário existe.
 
   """
   def acessar(usuarios) do
