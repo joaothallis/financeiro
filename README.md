@@ -2,9 +2,7 @@
 
 Estrutura de dados para realizar operações financeiras com [Elixir](http://elixir-lang.github.io/).
 
-[![CircleCI](https://circleci.com/gh/joaothallis/financeiro.svg?style=svg)](https://circleci.com/gh/joaothallis/financeiro)
-
-[![codecov](https://codecov.io/gh/joaothallis/financeiro/branch/master/graph/badge.svg)](https://codecov.io/gh/joaothallis/financeiro)
+[![CircleCI](https://circleci.com/gh/joaothallis/financeiro.svg?style=svg)](https://circleci.com/gh/joaothallis/financeiro) [![codecov](https://codecov.io/gh/joaothallis/financeiro/branch/master/graph/badge.svg)](https://codecov.io/gh/joaothallis/financeiro)
 
 ## Requerimento
 
