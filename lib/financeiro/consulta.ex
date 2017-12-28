@@ -20,6 +20,6 @@ defmodule Consulta do
 
   """
   def verifica_saldo(usuarios, usuario) do
-    IO.inspect(usuarios[usuario], limit: :infinity)
+    IO.puts usuarios[usuario] |> Enum.map_join("\n", fn {k, v} -> "#{k}:#{v}" end)
   end
 end
