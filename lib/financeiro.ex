@@ -48,6 +48,7 @@ defmodule Financeiro do
     # Verifica se o usuário existe
     case Keyword.fetch(usuarios, usuario) do
       :error ->
+        IO.inspect usuario
         IO.puts "Usuário não existe."
         acessar(usuarios)
       _ ->
@@ -61,7 +62,7 @@ defmodule Financeiro do
   
   """
   def string_atom(usuario) do
-    usuario |> String.trim(usuario) |> String.to_atom()
+    String.trim(usuario) |> String.to_atom()
   end
   
   @doc """
