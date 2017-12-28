@@ -61,7 +61,8 @@ defmodule Financeiro do
   
   """
   def string_atom(usuario) do
-    String.trim(usuario) |> String.to_atom()
+    usuario = String.trim(usuario) 
+    String.to_atom(usuario)
   end
   
   @doc """
