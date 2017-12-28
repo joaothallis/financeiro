@@ -27,8 +27,8 @@ defmodule FinanceiroTest do
   end
 
   test "remoção de \n e espaços antes e depois" do
-    assert String.trim(" Elixir\n ") == "Elixir";
-    assert String.trim("john lennon \n") == "john lennon";
+    assert String.trim(" Elixir\n ") == "Elixir"
+    assert String.trim("john lennon \n") == "john lennon"
     assert String.trim("João.\n ") == "João."
     assert String.trim("\n 24726021") == "24726021"
   end
