@@ -7,7 +7,7 @@ defmodule Financeiro do
   @doc """
   Inicia o sistema financeiro.
 
-  Leva o usuário a criar um cadastro ou entrar com um existente.
+  
 
   """
   def main([]) do
@@ -20,6 +20,10 @@ defmodule Financeiro do
     alfa(usuarios)
   end
 
+  @doc """
+  Leva o usuário a criar um cadastro ou entrar com um existente.
+
+  """
   def alfa(usuarios) do
     escolha = IO.gets "Sistema Financeiro\nDigite 1 para entrar ou 2 para criar um cadastro: "
     escolha = String.trim(escolha)
@@ -74,11 +78,9 @@ defmodule Financeiro do
         Consulta.verifica_saldo(usuarios, usuario)
         alternativas(usuarios, usuario)
       opcao == "2\n" ->
-        op = "deposito"
-        Transacao.cedula(usuarios, usuario, op)
+        Transacao.deposito(usuarios, usuario)
       opcao == "3\n" ->
-        op = "transferencia"
-        Transacao.transferencia(usuarios, usuario, op)
+        Transacao.transferencia(usuarios, usuario)
       opcao == "4\n" ->
           Cambio.troca(usuarios, usuario)
       true ->
