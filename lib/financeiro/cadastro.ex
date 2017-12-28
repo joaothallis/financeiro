@@ -10,14 +10,12 @@ defmodule Cadastro do
 
   """
   def cria_usuario(usuarios) do
-    case usuario = Regex.run(~r/^[a-zA-Z]+$/,IO.gets "Escreva um nome de usuário: ") do
+    case usuario = Regex.run(~r/^[a-zA-Z]+$/, IO.gets "Escreva um nome de usuário: ") do
       nil -> 
         IO.puts "Digite apenas letras."
         cria_usuario(usuarios)
-      _ -> :ok
+      _ -> [usuario] = usuario
     end
-    # Converte 'usuário' de lista para string
-    usuario = Enum.join(usuario)
     usuario = Financeiro.string_atom(usuario)
     case Keyword.fetch(usuarios, usuario) do
       :error ->
