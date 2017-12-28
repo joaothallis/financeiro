@@ -2,7 +2,9 @@
 
 Estrutura de dados para realizar operações financeiras com [Elixir](http://elixir-lang.github.io/).
 
-[![Build Status](https://semaphoreci.com/api/v1/joaothallis/financeiro/branches/master/badge.svg)](https://semaphoreci.com/joaothallis/financeiro)
+[![CircleCI](https://circleci.com/gh/joaothallis/financeiro.svg?style=svg)](https://circleci.com/gh/joaothallis/financeiro)
+
+[![codecov](https://codecov.io/gh/joaothallis/financeiro/branch/master/graph/badge.svg)](https://codecov.io/gh/joaothallis/financeiro)
 
 ## Requerimento
 
@@ -47,7 +49,9 @@ Ao criar uma conta, ela começa sem dinheiro. Para adicionar dinheiro realize um
 
 ### Status do Código
 
-[![Build Status](https://semaphoreci.com/api/v1/joaothallis/financeiro/branches/master/badge.svg)](https://semaphoreci.com/joaothallis/financeiro)
+[![CircleCI](https://circleci.com/gh/joaothallis/financeiro.svg?style=svg)](https://circleci.com/gh/joaothallis/financeiro)
+
+[![codecov](https://codecov.io/gh/joaothallis/financeiro/branch/master/graph/badge.svg)](https://codecov.io/gh/joaothallis/financeiro)
 
 ## Licensa
 [MIT License](https://en.wikipedia.org/wiki/MIT_License)
