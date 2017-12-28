@@ -197,6 +197,8 @@ defmodule Moeda do
   @doc """
   Lista com as moedas para a criação de novos usuários no sistema.
 
+  Todas moedas começam com valor 0
+
   ## Exemplo
 
   iex> usuario[Pedro: Moeda.novo()]
