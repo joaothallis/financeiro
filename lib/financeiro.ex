@@ -48,7 +48,6 @@ defmodule Financeiro do
     # Verifica se o usuário existe
     case Keyword.fetch(usuarios, usuario) do
       :error ->
-        IO.inspect usuario
         IO.puts "Usuário não existe."
         acessar(usuarios)
       _ ->
