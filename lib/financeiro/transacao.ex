@@ -106,8 +106,8 @@ defmodule Transacao do
     usuarios = put_in (usuarios[referido])[moeda], (usuarios[referido])[moeda] + quantia
     IO.puts "Você transferiu #{quantia} #{moeda} para #{referido}." 
     # Para verificar descomente as duas linhas abaixo
-    # referido = Keyword.get(usuarios[referido], moeda)
-    # IO.inspect referido
+    # IO.inspect = Keyword.get(usuarios[referido], moeda)
+    # IO.inspect = Keyword.get(usuarios[usuario], moeda)
     Financeiro.alternativas(usuarios, usuario)
   end
 
