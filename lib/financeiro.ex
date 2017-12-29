@@ -9,13 +9,22 @@ defmodule Financeiro do
 
   """
   def main([]) do
-    usuarios = [
+    alfa(usr_padrao)
+  end
+
+  @doc """
+  Criação dos usuários de exemplo.
+  
+  Cada um recebem a lista de moedas do padrão ISO 4217.
+
+  """
+  def usr_padrao do
+    [
       # Usuários de exemplo 
       maria: Moeda.novo(),
       stone: Moeda.novo(),
       john: Moeda.novo()
-    ]
-    alfa(usuarios)
+    ] 
   end
 
   @doc """
