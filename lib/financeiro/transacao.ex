@@ -122,33 +122,8 @@ defmodule Transacao do
         valor()
       _ -> 
         [quantia, _] = quantia
-        string_inteiro(quantia)
+        quantia = String.to_integer(quantia)
     end
-  end
-
-  @doc """
-  Transforma string em inteiro.
-
-  ## Parâmetro
-
-    - quantia: String que será convertida para inteiro.
-
-  ## Exemplos
-  
-      iex> Transacao.string_inteiro("1090")
-      1090
-
-      iex> Transacao.string_inteiro("00230")
-      230
-  
-  """
-  def string_inteiro(quantia) do
-    quantia = if quantia do
-      String.to_integer(quantia)
-    else
-      valor()
-    end
-    quantia
   end
 
   @doc """
