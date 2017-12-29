@@ -1,10 +1,9 @@
 defmodule CadastroTest do
   use ExUnit.Case
   
-  test "nome de usuário" do
+  test "apenas letras" do
     # Aceita apenas caracteres do alfabeto
-    assert Regex.run(~r/^[a-zA-Z]+$/, "joao")
-    assert Regex.run(~r/^[a-zA-Z]+$/, "donald")
-    refute Regex.run(~r/^[a-zA-Z]+$/, " donald ")
+    assert Regex.run(~r/^[a-zA-Z]+$/, "Lucas")
+    refute Regex.run(~r/^[a-zA-Z]+$/, " donald^ ")
   end
 end
