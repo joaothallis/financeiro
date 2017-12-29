@@ -48,4 +48,8 @@ defmodule TransacaoTest do
     quantia = 100 - split
     assert quantia == 90
   end
+
+  test "converte string para inteiro" do
+    assert Transacao.string_inteiro("1500") == 1500
+  end
 end
