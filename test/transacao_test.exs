@@ -40,15 +40,6 @@ defmodule TransacaoTest do
     assert Keyword.get([USD: 0], :USD) == 0
   end
 
-  test "rateio" do
-    usuarios = [john: [USD: 100], stone: [USD: 0], maria: [USD: 0]]
-    split = round(100 / 10)
-    usuarios = put_in (usuarios[:stone])[:USD],(usuarios[:stone])[:USD] + split
-    assert usuarios == [john: [USD: 100], stone: [USD: 10], maria: [USD: 0]]
-    quantia = 100 - split
-    assert quantia == 90
-  end
-
   test "possui quantia" do
     assert Transacao.verifica_valor([john: [USD: 60]], :john, :USD, 10) == 10
   end
