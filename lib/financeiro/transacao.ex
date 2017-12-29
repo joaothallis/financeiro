@@ -4,7 +4,8 @@ defmodule Transacao do
   """
 
   @doc """
-  Verifica se o código da moeda é válido.
+
+  Transforma a entrada do usuário para verificar o código da moeda
 
   """
   def cedula(usuarios, usuario) do
@@ -14,6 +15,22 @@ defmodule Transacao do
     ver_cedula(usuarios, usuario, moeda)
   end
 
+  @doc """
+  Verifica se a variável moeda é uma sigla válida de moeda.
+
+  ## Parâmetros
+
+    - moeda: Atom que representa as siglas de uma moeda.
+
+  ## Exemplo
+
+      iex> Transacao.ver_cedula(Financeiro.usr_padrao(), :john, :BRL)
+      :BRL
+
+      iex> Transacao.ver_cedula(Financeiro.usr_padrao(), :stone, :USD)
+      :USD
+  
+  """
   def ver_cedula(usuarios, usuario, moeda) do
     if Keyword.get(usuarios[usuario], moeda) do
       moeda
@@ -118,11 +135,11 @@ defmodule Transacao do
 
   ## Exemplos
   
-    iex> Transacao.string_inteiro("1090")
-    1090
+      iex> Transacao.string_inteiro("1090")
+      1090
 
-    iex> Transacao.string_inteiro("00230")
-    230
+      iex> Transacao.string_inteiro("00230")
+      230
   
   """
   def string_inteiro(quantia) do

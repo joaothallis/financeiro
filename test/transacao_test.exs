@@ -1,6 +1,10 @@
 defmodule TransacaoTest do
   use ExUnit.Case
-    
+  
+  test "verifica se a moeda é válida" do
+    assert Transacao.ver_cedula(Financeiro.usr_padrao(), :john, :BRL) == :BRL
+  end
+  
   test "apenas números" do
     quantia = "23232142\n"
     quantia = String.trim(quantia)
@@ -8,19 +12,19 @@ defmodule TransacaoTest do
     assert quantia > 0
   end
 
-  test "adiciona" do
+  test "adiciona dinheiro" do
     usuario = [john: [USD: 0]]
     usuario = put_in (usuario[:john])[:USD],(usuario[:john])[:USD] + 10
     assert usuario == [john: [USD: 10]]
   end
 
-  test "remove" do
+  test "remove dinheiro" do
     usuario = [john: [USD: 60]]
     usuario = put_in (usuario[:john])[:USD],(usuario[:john])[:USD] - 30
     assert usuario == [john: [USD: 30]]
   end
 
-  test "transfere" do
+  test "transfere dinheiro entre contas" do
     usuario = [john: [USD: 60], stone: [USD: 60]]
     usuario = put_in (usuario[:john])[:USD],(usuario[:john])[:USD] - 30
     usuario = put_in (usuario[:stone])[:USD],(usuario[:stone])[:USD] + 30
