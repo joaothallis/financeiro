@@ -52,4 +52,8 @@ defmodule TransacaoTest do
   test "possui quantia" do
     assert Transacao.verifica_valor([john: [USD: 60]], :john, :USD, 10) == 10
   end
+
+  test "rateio de valor" do
+    assert Transacao.rateio(Financeiro.usr_padrao(), :AED, 100) == 90
+  end
 end
