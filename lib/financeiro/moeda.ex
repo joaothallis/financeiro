@@ -16,7 +16,7 @@ defmodule Moeda do
 
   """
   def info do
-    moedas = [
+    [
       AED: %{nome: "UAE Dirham",                                             simbolo: "د.إ", expoente: 2},
       AFN: %{nome: "Afghani",                                                simbolo: "؋",    expoente: 2},
       ALL: %{nome: "Lek",                                                    simbolo: "Lek",  expoente: 2},
@@ -207,7 +207,7 @@ defmodule Moeda do
   
   """
   def novo do
-    novo = [
+    [
       AED: 0, 
       AFN: 0,
       ALL: 0,
