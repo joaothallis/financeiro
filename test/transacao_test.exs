@@ -49,7 +49,7 @@ defmodule TransacaoTest do
     assert quantia == 90
   end
 
-  test "converte string para inteiro" do
-    assert Transacao.string_inteiro("1500") == 1500
+  test "possui quantia" do
+    assert Transacao.verifica_valor([john: [USD: 60]], :john, :USD, 10) == 10
   end
 end
