@@ -96,7 +96,7 @@ defmodule Transacao do
     verifica_valor(usuarios, usuario, moeda, quantia)
     # Remove
     usuarios = put_in (usuarios[usuario])[moeda], (usuarios[usuario])[moeda] - quantia
-    quantia = 
+    [quantia, usuarios] = 
     if referido != :stone do
       rateio(usuarios, moeda, quantia)
     else
@@ -105,9 +105,10 @@ defmodule Transacao do
     # Adiciona
     usuarios = put_in (usuarios[referido])[moeda], (usuarios[referido])[moeda] + quantia
     IO.puts "Você transferiu #{quantia} #{moeda} para #{referido}." 
-    # Para verificar descomente as duas linhas abaixo
-    # IO.inspect = Keyword.get(usuarios[referido], moeda)
-    # IO.inspect = Keyword.get(usuarios[usuario], moeda)
+    # Para verificar descomente as linhas abaixo
+    # IO.inspect Keyword.get(usuarios[referido], moeda)
+    # IO.inspect Keyword.get(usuarios[usuario], moeda)
+    # IO.inspect Keyword.get(usuarios[:stone], moeda)
     Financeiro.alternativas(usuarios, usuario)
   end
 
@@ -122,7 +123,7 @@ defmodule Transacao do
         valor()
       _ -> 
         [quantia, _] = quantia
-        quantia = String.to_integer(quantia)
+        String.to_integer(quantia)
     end
   end
 
@@ -149,6 +150,6 @@ defmodule Transacao do
     split = round(quantia / taxa)
     usuarios = put_in (usuarios[:stone])[moeda], (usuarios[:stone])[moeda] + split
     IO.write "Taxa de rateio de #{taxa}% para stone. "
-    quantia - split 
+    [quantia - split, usuarios] 
   end
 end

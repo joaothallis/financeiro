@@ -45,6 +45,6 @@ defmodule TransacaoTest do
   end
 
   test "rateio de valor" do
-    assert Transacao.rateio(Financeiro.usr_padrao(), :AED, 100) == 90
+    assert Transacao.rateio([john: [USD: 100], stone: [USD: 0]], :USD, 100) == [90, [john: [USD: 100], stone: [USD: 10]]]
   end
 end
