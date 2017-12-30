@@ -65,16 +65,21 @@ defmodule Transacao do
       Financeiro.alternativas(usuarios, usuario)
   end
 
+  def possui_dinheiro(usuarios, usuario) do
+    total = Keyword.values(usuarios[usuario])
+    if Enum.sum(total) <= 0 do
+      IO.puts "Você não possui dinheiro, faça um deposito antes de continuar"
+      :error
+    end
+  end  
+
   @doc """
   Realiza transferência de dinheiro entre contas do sistema.
 
   """
+  
   def transferencia(usuarios, usuario) do
-    total = Keyword.values(usuarios[usuario])
-    if Enum.sum(total) <= 0 do
-      IO.puts "Você não possui dinheiro, faça um deposito antes de continuar"
-      Financeiro.alternativas(usuarios, usuario)
-    end
+    if possui_dinheiro(usuarios, usuario) == :error, do: Financeiro.alternativas(usuarios, usuario)
     referido = IO.gets "Para qual conta deseja realizar a transferência: "
     referido = Financeiro.string_atom(referido)
     if referido == usuario do

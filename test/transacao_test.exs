@@ -32,8 +32,7 @@ defmodule TransacaoTest do
   end 
 
   test "não possui dinheiro" do
-    total = Keyword.values([BRL: 0, USD: 0])
-    assert Enum.sum(total) <= 0
+    assert Transacao.possui_dinheiro(Financeiro.usr_padrao(), :john) == :error
   end
 
   test "moeda com valor nulo" do
