@@ -65,6 +65,10 @@ defmodule Transacao do
       Financeiro.alternativas(usuarios, usuario)
   end
 
+  @doc """
+  Verifica se o usuário possui algum dinheiro em sua conta.
+
+  """
   def possui_dinheiro(usuarios, usuario) do
     total = Keyword.values(usuarios[usuario])
     if Enum.sum(total) <= 0 do
