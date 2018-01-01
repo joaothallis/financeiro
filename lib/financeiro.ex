@@ -54,15 +54,16 @@ defmodule Financeiro do
   def acessar(usuarios) do
     usuario = IO.gets "Digite seu nome de usuário: "
     usuario = string_atom(usuario)
-    # Verifica se o usuário existe
-    case Keyword.fetch(usuarios, usuario) do
+    case verifica_usuario(usuarios, usuario) do
       :error ->
         IO.puts "Usuário não existe."
         acessar(usuarios)
-      _ ->
-        IO.puts "Acesso realizado com sucesso."
-        alternativas(usuarios, usuario)
+      _ -> alternativas(usuarios, usuario)
     end
+  end
+
+  def verifica_usuario(usuarios, usuario) do
+    Keyword.fetch(usuarios, usuario) 
   end
 
   @doc """
