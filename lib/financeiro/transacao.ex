@@ -103,16 +103,14 @@ defmodule Transacao do
     end
     quantia = valor()
     verifica_valor(usuarios, usuario, moeda, quantia)
-    # Remove
-    usuarios = put_in (usuarios[usuario])[moeda], (usuarios[usuario])[moeda] - quantia
+    usuarios = Cambio.remove_moeda(usuarios, usuario, moeda, quantia) 
     [quantia, usuarios] = 
     if referido != :stone do
       rateio(usuarios, moeda, quantia)
     else
       quantia
     end
-    # Adiciona
-    usuarios = put_in (usuarios[referido])[moeda], (usuarios[referido])[moeda] + quantia
+    usuarios = Cambio.add_moeda(usuarios, usuario, moeda, quantia)
     IO.puts "Você transferiu #{quantia} #{moeda} para #{referido}." 
     # Para verificar descomente as linhas abaixo
     # IO.inspect Keyword.get(usuarios[referido], moeda)
