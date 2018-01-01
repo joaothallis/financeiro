@@ -45,6 +45,8 @@ Ao criar uma conta, ela começa sem dinheiro. Para adicionar dinheiro realize um
 
 - Por padrão o usuário `stone` recebe a taxa de rateio.
 
+- Todas moedas possem `1` de `taxa` de câmbio, exceto `AED`, `BRL`, `USD`.
+
 ### Status do Código
 
 [![CircleCI](https://circleci.com/gh/joaothallis/financeiro.svg?style=svg)](https://circleci.com/gh/joaothallis/financeiro)
