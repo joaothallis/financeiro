@@ -153,7 +153,7 @@ defmodule Transacao do
   def rateio(usuarios, moeda, quantia) do
     taxa = 10
     split = round(quantia / taxa)
-    usuarios = put_in (usuarios[:stone])[moeda],(usuarios[:stone])[moeda] + split
+    usuarios = put_in (usuarios[:stone])[moeda], (usuarios[:stone])[moeda] + split
     IO.write "Taxa de rateio de #{taxa}% para stone. "
     [quantia - split, usuarios] 
   end
