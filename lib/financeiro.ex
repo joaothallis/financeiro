@@ -89,7 +89,7 @@ defmodule Financeiro do
       opcao == "3\n" ->
         Transacao.transferencia(usuarios, usuario)
       opcao == "4\n" ->
-        Cambio.troca(usuarios, usuario)
+        Cambio.cambio_moeda(usuarios, usuario)
       true ->
         IO.puts "Digite apenas 1, 2, 3 ou 4"
         alternativas(usuarios, usuario)
