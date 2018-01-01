@@ -89,12 +89,12 @@ defmodule Transacao do
       IO.puts "Você não pode realizar transferência para sua conta. Para adicionar dinheiro a sua conta realize um deposito."
       Financeiro.alternativas(usuarios, usuario)
     end
-    case Keyword.fetch(usuarios, referido) do
-      :error ->
+    case Financeiro.verifica_usuario(usuarios, referido) do
+      :error -> 
         IO.puts "Essa conta não existe."
         transferencia(usuarios, usuario)
       _ -> :ok
-    end
+    end 
     moeda = cedula(usuarios, usuario)
     if Keyword.get(usuarios[usuario], moeda) <= 0 do
       IO.puts "Você não possui quantia com essa moeda, faça um deposito antes de continuar."
@@ -103,13 +103,12 @@ defmodule Transacao do
     quantia = valor()
     verifica_valor(usuarios, usuario, moeda, quantia)
     usuarios = Cambio.remove_moeda(usuarios, usuario, moeda, quantia) 
-    [quantia, usuarios] = 
     if referido != :stone do
-      rateio(usuarios, moeda, quantia)
+      [quantia, usuarios] = rateio(usuarios, moeda, quantia)
     else
       quantia
     end
-    usuarios = Cambio.add_moeda(usuarios, usuario, moeda, quantia)
+    usuarios = Cambio.add_moeda(usuarios, referido, moeda, quantia)
     IO.puts "Você transferiu #{quantia} #{moeda} para #{referido}." 
     # Para verificar descomente as linhas abaixo
     # IO.inspect Keyword.get(usuarios[referido], moeda)
@@ -154,7 +153,7 @@ defmodule Transacao do
   def rateio(usuarios, moeda, quantia) do
     taxa = 10
     split = round(quantia / taxa)
-    usuarios = put_in (usuarios[:stone])[moeda], (usuarios[:stone])[moeda] + split
+    usuarios = put_in (usuarios[:stone])[moeda],(usuarios[:stone])[moeda] + split
     IO.write "Taxa de rateio de #{taxa}% para stone. "
     [quantia - split, usuarios] 
   end
