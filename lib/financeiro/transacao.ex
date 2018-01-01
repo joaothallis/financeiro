@@ -4,7 +4,6 @@ defmodule Transacao do
   """
 
   @doc """
-
   Transforma a entrada do usuário para verificar o código da moeda
 
   """
