@@ -973,7 +973,8 @@ defmodule Moeda do
         expoente: 2
       },
       XBA: %{
-        nome: "Bond Markets Units European Composite Unit (EURCO)",     simbolo: " ",    
+        nome: "Bond Markets Units European Composite Unit (EURCO)",     
+        simbolo: " ",    
         peso: 1, 
         expoente: 2
       },
@@ -1038,7 +1039,8 @@ defmodule Moeda do
         expoente: 2
       },
       XTS: %{
-        nome: "Codes specifically reserved for testing purposes",       simbolo: " ",    
+        nome: "Codes specifically reserved for testing purposes",       
+        simbolo: " ",    
         peso: 1, 
         expoente: 2
       },
