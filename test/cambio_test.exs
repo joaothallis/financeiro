@@ -30,6 +30,6 @@ defmodule CambioTest do
   end
 
   test "realiza cambio" do
-    assert Cambio.realiza_cambio([john: [BRL: 100, USD: 0]], :john, :BRL, :USD, 100, 5) == [john: [BRL: 0, USD: 50]]
+    assert Cambio.realiza_cambio([john: [BRL: 100, USD: 0]], :john, :BRL, :USD, 100) == [john: [BRL: 0, USD: 50]]
   end
 end

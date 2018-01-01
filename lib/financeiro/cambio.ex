@@ -13,7 +13,7 @@ defmodule Cambio do
     end
     entrada = Transacao.cedula(usuarios, usuario)
     IO.write "Primeira moeda: #{entrada}. "
-    peso_entrada = obtem_peso(entrada)
+
     quantia = Transacao.valor()
     Transacao.verifica_valor(usuarios, usuario, entrada, quantia)
     saida = Transacao.cedula(usuarios, usuario)
@@ -21,7 +21,7 @@ defmodule Cambio do
       IO.puts "Não é possível realizar câmbio para a mesma moeda. Digite as moedas novamente."
       cambio_moeda(usuarios, usuario)
     end
-    usuarios = realiza_cambio(usuarios, usuario, entrada, saida, quantia, peso_entrada)
+    usuarios = realiza_cambio(usuarios, usuario, entrada, saida, quantia)
     Financeiro.alternativas(usuarios, usuario)
   end
 
@@ -36,18 +36,17 @@ defmodule Cambio do
 
     - quantia: Quantia que deseja trocar.
 
-    - peso_entrada: Peso da moeda de entrada.
-
   ## Exemplos
 
-      iex> Cambio.realiza_cambio([john: [BRL: 0, USD: 100]], :john, :USD, :BRL, 100, 10)
+      iex> Cambio.realiza_cambio([john: [BRL: 0, USD: 100]], :john, :USD, :BRL, 100)
       [john: [BRL: 200, USD: 0]]
 
-      iex> Cambio.realiza_cambio([stone: [AED: 10, IRR: 0]], :john, :AED, :IRR, 10, 1)
+      iex> Cambio.realiza_cambio([stone: [AED: 10, IRR: 0]], :john, :AED, :IRR, 10)
       [stone: [AED: 0, IRR: 10]]
   
   """
-  def realiza_cambio(usuarios, usuario, entrada, saida, quantia, peso_entrada) do
+  def realiza_cambio(usuarios, usuario, entrada, saida, quantia) do
+    peso_entrada = obtem_peso(entrada)
     IO.puts "Segunda moeda: #{saida}."
     peso_saida = obtem_peso(saida)
     taxa(peso_entrada, peso_saida)
@@ -122,13 +121,19 @@ defmodule Cambio do
   @doc """
   Realiza divisão com o peso das moedas.
 
+  ## Parâmetros
+
+    - peso_entrada: Peso da moeda de entrada.
+
+    - peso_saida: Peso da moeda de saída.
+
   ## Exemplos
 
-  iex> Cambio.taxa(15, 5) 
-  3
+      iex> Cambio.taxa(15, 5) 
+      3
 
-  iex> Cambio.taxa(1, 10)
-  0.1
+      iex> Cambio.taxa(1, 10)
+      0.1
 
   """
   def taxa(peso_entrada, peso_saida) do
