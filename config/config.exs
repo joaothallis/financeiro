@@ -1,11 +1,11 @@
 # Esse arquivo é responsável por configurar seu aplicativo
-#  e suas dependências com o auxílio do módulo Mix.Config.
+# e suas dependências com o auxílio do módulo Mix.Config.
 use Mix.Config
 
 # Esta configuração é carregada antes de qualquer dependência e é restrita
-# para este projeto. Se outro projeto depende desse projeto, isse
+# para este projeto. Se outro projeto depende desse projeto, esse
 # arquivo não será carregado nem afetará o projeto pai. Por esta razão,
-#  se você quiser fornecer valores padrão para seu aplicativo para
+# se você quiser fornecer valores padrão para seu aplicativo para
 # usuários de terceiros, isso deve ser feito no seu arquivo "mix.exs".
 
 # Você pode configurar seu aplicativo como:
