@@ -72,7 +72,7 @@ defmodule Cambio do
   end
 
   @doc """
-  Remove dinheiro de uma determinada moeda
+  Remove dinheiro de uma determinada moeda.
 
   ## Exemplos
 
@@ -84,6 +84,7 @@ defmodule Cambio do
 
   """
   def add_moeda(usuarios, usuario, saida, quantia_nova) do
+    Critico.dinheiro_falha(quantia_nova)
     put_in (usuarios[usuario])[saida], (usuarios[usuario])[saida] + quantia_nova
   end
 

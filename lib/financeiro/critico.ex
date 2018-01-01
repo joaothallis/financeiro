@@ -10,7 +10,6 @@ defmodule Critico do
   """
   def usuario_falha(usuarios, usuario) do
     if Keyword.fetch(usuarios, usuario) == :error do
-      IO.puts "Usuário não existe"
       System.stop(0)  
     end
   end
@@ -24,6 +23,5 @@ defmodule Critico do
       IO.puts "Dinheiro insuficiente."
       System.stop(0) 
     end
-  
   end
 end
