@@ -12,12 +12,13 @@ defmodule TransacaoTest do
     assert quantia > 0
   end
 
-  test "transfere dinheiro entre contas" do
-    usuario = [john: [USD: 60], stone: [USD: 60]]
-    usuario = put_in (usuario[:john])[:USD],(usuario[:john])[:USD] - 30
-    usuario = put_in (usuario[:stone])[:USD],(usuario[:stone])[:USD] + 30
-    assert usuario == [john: [USD: 30], stone: [USD: 90]]
+  test "transfere dinheiro entre contas sem rateio" do
+    assert Transacao.realiza_transferencia([jake: [USD: 60], stone: [USD: 60]], :jake, :USD, 30, :stone) == [jake: [USD: 30], stone: [USD: 90]] 
   end 
+
+  test "transfere dinheiro entre contas com rateio" do
+    assert Transacao.realiza_transferencia([bob: [USD: 100], john: [USD: 0], stone: [USD: 0]], :bob, :USD, 100, :john) == [bob: [USD: 0], john: [USD: 90], stone: [USD: 10]] 
+  end
 
   test "não possui dinheiro" do
     assert Transacao.possui_dinheiro(Financeiro.usr_padrao(), :john) == :error
@@ -35,7 +36,7 @@ defmodule TransacaoTest do
     assert Transacao.rateio([john: [USD: 100], stone: [USD: 0]], :USD, 100) == [90, [john: [USD: 100], stone: [USD: 10]]]
   end
 
-  test "converte para maíusculo e em atom" do
+  test "converte para maiúsculo e em atom" do
     assert Transacao.up_atom("blr") == :BLR
   end 
 end

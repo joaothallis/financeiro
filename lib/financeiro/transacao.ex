@@ -14,7 +14,7 @@ defmodule Transacao do
   end
 
   @doc """
-  Converte todos os caracteres para maíusculo e a `String` em um `Atom`.
+  Converte todos os caracteres para maiúsculo e a `String` em um `Atom`.
 
   """
   def up_atom(moeda) do
@@ -84,12 +84,14 @@ defmodule Transacao do
   end  
 
   @doc """
-  Realiza transferência de dinheiro entre contas do sistema.
+  Obtém as entradas necessárias para realiza transferência de dinheiro entre contas do sistema.
 
   """
   
   def transferencia(usuarios, usuario) do
-    if possui_dinheiro(usuarios, usuario) == :error, do: Financeiro.alternativas(usuarios, usuario)
+    if possui_dinheiro(usuarios, usuario) == :error do
+      Financeiro.alternativas(usuarios, usuario)
+    end
     referido = IO.gets "Para qual conta deseja realizar a transferência: "
     referido = Financeiro.string_atom(referido)
     if referido == usuario do
@@ -108,6 +110,17 @@ defmodule Transacao do
       Financeiro.alternativas(usuarios, usuario)
     end
     quantia = valor()
+    usuarios = realiza_transferencia(usuarios, usuario, moeda, quantia, referido)
+    # Para verificar descomente a linha abaixo
+    # IO.inspect(usuarios, limit: :infinity)
+    Financeiro.alternativas(usuarios, usuario)
+  end
+
+  @doc """
+  Realiza transferência de dinheiro entre contas.
+  
+  """
+  def realiza_transferencia(usuarios, usuario, moeda, quantia, referido) do
     verifica_valor(usuarios, usuario, moeda, quantia)
     usuarios = Cambio.remove_moeda(usuarios, usuario, moeda, quantia) 
     if referido != :stone do
@@ -115,13 +128,8 @@ defmodule Transacao do
     else
       quantia
     end
-    usuarios = Cambio.add_moeda(usuarios, referido, moeda, quantia)
     IO.puts "Você transferiu #{quantia} #{moeda} para #{referido}." 
-    # Para verificar descomente as linhas abaixo
-    # IO.inspect Keyword.get(usuarios[referido], moeda)
-    # IO.inspect Keyword.get(usuarios[usuario], moeda)
-    # IO.inspect Keyword.get(usuarios[:stone], moeda)
-    Financeiro.alternativas(usuarios, usuario)
+    Cambio.add_moeda(usuarios, referido, moeda, quantia)
   end
 
   @doc """
