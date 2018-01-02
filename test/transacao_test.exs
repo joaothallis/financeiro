@@ -12,18 +12,6 @@ defmodule TransacaoTest do
     assert quantia > 0
   end
 
-  test "adiciona dinheiro" do
-    usuario = [john: [USD: 0]]
-    usuario = put_in (usuario[:john])[:USD],(usuario[:john])[:USD] + 10
-    assert usuario == [john: [USD: 10]]
-  end
-
-  test "remove dinheiro" do
-    usuario = [john: [USD: 60]]
-    usuario = put_in (usuario[:john])[:USD],(usuario[:john])[:USD] - 30
-    assert usuario == [john: [USD: 30]]
-  end
-
   test "transfere dinheiro entre contas" do
     usuario = [john: [USD: 60], stone: [USD: 60]]
     usuario = put_in (usuario[:john])[:USD],(usuario[:john])[:USD] - 30
