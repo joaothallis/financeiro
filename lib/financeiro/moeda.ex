@@ -10,10 +10,10 @@ defmodule Moeda do
 
   ## Exemplo
 
-  iex> moeda_info[:AED].peso
+  iex> Moeda.moeda_info[:AED].peso
   2
 
-  iex> moeda_info[:USD].simbolo
+  iex> Moeda.moeda_info[:USD].simbolo
   $
 
   """

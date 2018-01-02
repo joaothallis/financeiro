@@ -105,7 +105,7 @@ defmodule Transacao do
       IO.puts "Você não pode realizar transferência para sua conta. Para adicionar dinheiro a sua conta realize um deposito."
       Financeiro.alternativas(usuarios, usuario)
     end
-    case Financeiro.verifica_usuario(usuarios, referido) do
+    case Consulta.verifica_usuario(usuarios, referido) do
       :error -> 
         IO.puts "Essa conta não existe."
         transferencia(usuarios, usuario)

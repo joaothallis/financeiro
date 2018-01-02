@@ -47,6 +47,10 @@ Ao criar uma conta, ela começa sem dinheiro. Para adicionar dinheiro realize um
 
 - Todas moedas possem `1` de `taxa` de câmbio, exceto `AED`, `BRL`, `USD`.
 
+### Lançamento principal
+
+1.0.0  
+
 ### Status do Código
 
 [![CircleCI](https://circleci.com/gh/joaothallis/financeiro.svg?style=svg)](https://circleci.com/gh/joaothallis/financeiro)
