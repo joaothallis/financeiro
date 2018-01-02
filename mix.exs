@@ -5,12 +5,17 @@ defmodule Financeiro.Mixfile do
     [
       app: :financeiro,
       version: "1.0.0",
+      escript: escript(),
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [coveralls: :test]
     ]
+  end
+
+  defp escript do
+    [main_module: Financeiro]
   end
 
   # Execute "mix help compile.app" para saber mais sobre applications.
