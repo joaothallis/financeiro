@@ -9,9 +9,16 @@ defmodule Transacao do
   """
   def cedula(usuarios, usuario) do
     moeda = IO.gets "Qual moeda? "
-    moeda = String.upcase(moeda)
-    moeda = Financeiro.string_atom(moeda)
+    moeda = up_atom(moeda)
     ver_cedula(usuarios, usuario, moeda)
+  end
+
+  @doc """
+  Converte todos os caracteres para maíusculo e a `String` em um `Atom`.
+
+  """
+  def up_atom(moeda) do
+    moeda |> String.upcase() |> Financeiro.string_atom()
   end
 
   @doc """

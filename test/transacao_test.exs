@@ -46,4 +46,8 @@ defmodule TransacaoTest do
   test "rateio de valor" do
     assert Transacao.rateio([john: [USD: 100], stone: [USD: 0]], :USD, 100) == [90, [john: [USD: 100], stone: [USD: 10]]]
   end
+
+  test "converte para maíusculo e em atom" do
+    assert Transacao.up_atom("blr") == :BLR
+  end 
 end
