@@ -87,7 +87,6 @@ defmodule Transacao do
   Obtém as entradas necessárias para realiza transferência de dinheiro entre contas do sistema.
 
   """
-  
   def transferencia(usuarios, usuario) do
     if possui_dinheiro(usuarios, usuario) == :error do
       Financeiro.alternativas(usuarios, usuario)
