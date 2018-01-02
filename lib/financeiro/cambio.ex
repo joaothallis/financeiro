@@ -13,7 +13,6 @@ defmodule Cambio do
     end
     entrada = Transacao.cedula(usuarios, usuario)
     IO.write "Primeira moeda: #{entrada}. "
-
     quantia = Transacao.valor()
     Transacao.verifica_valor(usuarios, usuario, entrada, quantia)
     saida = Transacao.cedula(usuarios, usuario)

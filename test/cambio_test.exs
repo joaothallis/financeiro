@@ -29,7 +29,7 @@ defmodule CambioTest do
     assert Cambio.calc_retorno(5, 2, 100) === 250
   end
 
-  test "realiza cambio" do
+  test "converte moeda" do
     assert Cambio.realiza_cambio([john: [BRL: 100, USD: 0]], :john, :BRL, :USD, 100) == [john: [BRL: 0, USD: 50]]
   end
 end
