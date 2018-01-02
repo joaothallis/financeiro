@@ -6,11 +6,13 @@ defmodule CambioTest do
   end
 
   test "remove dinheiro" do
-    assert Cambio.remove_moeda([john: [USD: 60]], :john, :USD, 30) == [john: [USD: 30]]
+    usuarios = [bob: [USD: 60]]
+    assert Cambio.remove_moeda(usuarios, :bob, :USD, 30) == [bob: [USD: 30]]
   end
 
   test "adiciona dinheiro" do
-    assert Cambio.add_moeda([stone: [BRL: 150]], :stone, :BRL, 1000) == [stone: [BRL: 1150]]
+    usuarios = [stone: [BRL: 150]]
+    assert Cambio.add_moeda(usuarios, :stone, :BRL, 100) == [stone: [BRL: 250]]
   end
 
   test "moeda invalida" do
@@ -30,6 +32,8 @@ defmodule CambioTest do
   end
 
   test "converte moeda" do
-    assert Cambio.realiza_cambio([john: [BRL: 100, USD: 0]], :john, :BRL, :USD, 100) == [john: [BRL: 0, USD: 50]]
+    usuarios = [john: [BRL: 100, USD: 0]]
+    result = [john: [BRL: 0, USD: 50]]
+    assert Cambio.realiza_cambio(usuarios, :john, :BRL, :USD, 100) == result
   end
 end

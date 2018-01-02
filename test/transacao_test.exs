@@ -13,11 +13,15 @@ defmodule TransacaoTest do
   end
 
   test "transfere dinheiro entre contas sem rateio" do
-    assert Transacao.realiza_transferencia([jake: [USD: 60], stone: [USD: 60]], :jake, :USD, 30, :stone) == [jake: [USD: 30], stone: [USD: 90]] 
+    usuarios = [bob: [USD: 60], stone: [USD: 60]]
+    result = [bob: [USD: 30], stone: [USD: 90]] 
+    assert Transacao.realiza_transferencia(usuarios, :bob, :USD, 30, :stone) == result
   end 
 
   test "transfere dinheiro entre contas com rateio" do
-    assert Transacao.realiza_transferencia([bob: [USD: 100], john: [USD: 0], stone: [USD: 0]], :bob, :USD, 100, :john) == [bob: [USD: 0], john: [USD: 90], stone: [USD: 10]] 
+    usuarios = [bob: [USD: 100], john: [USD: 0], stone: [USD: 0]]
+    result = [bob: [USD: 0], john: [USD: 90], stone: [USD: 10]] 
+    assert Transacao.realiza_transferencia(usuarios, :bob, :USD, 100, :john) == result
   end
 
   test "não possui dinheiro" do
@@ -33,7 +37,9 @@ defmodule TransacaoTest do
   end
 
   test "rateio de valor" do
-    assert Transacao.rateio([john: [USD: 100], stone: [USD: 0]], :USD, 100) == [90, [john: [USD: 100], stone: [USD: 10]]]
+    usuarios = [john: [USD: 100], stone: [USD: 0]]
+    result = [90, [john: [USD: 100], stone: [USD: 10]]]
+    assert Transacao.rateio(usuarios, :USD, 100) == result
   end
 
   test "converte para maiúsculo e em atom" do
