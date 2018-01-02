@@ -27,4 +27,3 @@ defmodule Cadastro do
         cria_usuario(usuarios)
     end
   end
-end
