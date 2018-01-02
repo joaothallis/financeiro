@@ -55,7 +55,7 @@ defmodule Cambio do
   end
 
   @doc """
-  Remove dinheiro de uma determinada moeda
+  Remove dinheiro de uma determinada moeda.
 
   ## Exemplos
 
@@ -71,14 +71,14 @@ defmodule Cambio do
   end
 
   @doc """
-  Remove dinheiro de uma determinada moeda.
+  Adiciona dinheiro em uma determinada moeda.
 
   ## Exemplos
 
       iex> Cambio.add_moeda([maria: [USD: 100]], :maria, :USD, 50)
       [maria: [USD: 150]]
 
-      iex> Cambio.remove_moeda([stone: [BRL: 200]], :stone, :USD, 28)
+      iex> Cambio.add_moeda([stone: [BRL: 200]], :stone, :USD, 28)
       [stone: [USD: 228]]
 
   """
@@ -90,10 +90,16 @@ defmodule Cambio do
   @doc """
   Verifica se as moedas são iguais.
 
+  ## Parâmetros
+
+    - entrada: Atom que representa a primeira moeda.
+
+    - saida: Atom que representa a segunda moeda.
+
   ## Exemplo
 
-  iex> Cambio.valida_moeda(:USD, :USD)
-  :error
+      iex> Cambio.valida_moeda(:USD, :USD)
+      :error
 
   """
   def valida_moeda(entrada, saida) do

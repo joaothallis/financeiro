@@ -13,8 +13,8 @@ defmodule Moeda do
   iex> moeda_info[:AED].peso
   2
 
-  iex> moeda_info[:USD].peso
-  10
+  iex> moeda_info[:USD].simbolo
+  $
 
   """
   def info do
@@ -1077,9 +1077,9 @@ defmodule Moeda do
 
   ## Exemplo
 
-  iex> usuario[Pedro: Moeda.novo()]
-  [AED: 0, AFN: 0, ALL: 0, AMD: 0, ANG: 0, AOA: 0, ARS: 0, AUD: 0, AWG: 0, AZN: 0,
-   BAM: 0, BBD: 0, BDT: 0, BGN: 0, BHD: 0, BIF: 0, BMD: 0, BND: 0, BOB: 0, BOV: 0,...
+      iex> usuario[Pedro: Moeda.novo()]
+      [AED: 0, AFN: 0, ALL: 0, AMD: 0, ANG: 0, AOA: 0, ARS: 0, AUD: 0, AWG: 0, AZN: 0,
+      BAM: 0, BBD: 0, BDT: 0, BGN: 0, BHD: 0, BIF: 0, BMD: 0, BND: 0, BOB: 0, BOV: 0,...
   
   """
   def novo do

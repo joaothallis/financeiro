@@ -1,6 +1,5 @@
 defmodule FinanceiroTest do
   use ExUnit.Case
-  doctest Financeiro
 
   test "verifica se usuário existe" do
     usuarios = [

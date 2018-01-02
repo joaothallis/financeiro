@@ -1,6 +1,6 @@
 defmodule Cadastro do
   @moduledoc """
-  Forcene a função para criar novos usuários.
+  Módulo para criar novos usuários.
   """
 
   @doc """

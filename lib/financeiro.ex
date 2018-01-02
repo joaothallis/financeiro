@@ -15,12 +15,12 @@ defmodule Financeiro do
   @doc """
   Criação dos usuários de exemplo.
   
-  Cada um recebem a lista de moedas do padrão ISO 4217.
+  Cada um recebem uma lista com as moedas do padrão ISO 4217.
 
   """
   def usr_padrao do
     [
-      # Usuários de exemplo 
+      # Usuários de exemplo. 
       maria: Moeda.novo(),
       stone: Moeda.novo(),
       john: Moeda.novo()
@@ -29,6 +29,10 @@ defmodule Financeiro do
 
   @doc """
   Leva o usuário a criar um cadastro ou entrar com um existente.
+
+  ## Parâmetro
+
+    - usuarios: Lista com os nomes de usuários e suas respectivas quantias de dinheiro.
 
   """
   def alfa(usuarios) do
@@ -46,9 +50,7 @@ defmodule Financeiro do
   end
 
   @doc """
-  Faz acesso a conta do usuário.
-
-  É feita uma verificação na estrutura de dados para confirmar se o usuário existe.
+  Realiza acesso a conta do usuário.
 
   """
   def acessar(usuarios) do
@@ -62,12 +64,24 @@ defmodule Financeiro do
     end
   end
 
+  @doc """
+  É feita uma verificação na estrutura de dados para confirmar se o usuário existe.
+
+  """
   def verifica_usuario(usuarios, usuario) do
     Keyword.fetch(usuarios, usuario) 
   end
 
   @doc """
-  Transforma uma string em atom.
+  Remove espaço e transforma string em atom.
+
+  ## Exemplos
+
+      iex> Financeiro.string_atom("Roberta \n)
+      :Roberta
+
+      iex> Financeiro.string_atom("Lucas \n")
+      :Lucas
   
   """
   def string_atom(usuario) do

@@ -6,9 +6,9 @@ defmodule Financeiro.Application do
   use Application
 
   def start(_type, _args) do
-    # List all child processes to be supervised
+    # Liste todos os processos filho a serem supervisionados
     children = [
-      # Starts a worker by calling: Financeiro.Worker.start_link(arg)
+      # Inicia um worker chamando: Financeiro.Worker.start_link(arg)
       # {Financeiro.Worker, arg},
     ]
 

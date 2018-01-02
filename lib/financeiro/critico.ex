@@ -1,7 +1,7 @@
 
 defmodule Critico do
   @moduledoc """
-  Interrompe a execução do programa em caso de erros críticos.
+  Interrompe a execução do programa em casos de erros críticos.
   """
 
   @doc """

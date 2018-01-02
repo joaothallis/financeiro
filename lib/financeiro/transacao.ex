@@ -1,10 +1,10 @@
 defmodule Transacao do
   @moduledoc """
-  Forcene a função para fazer transferências monetárias entre contas.
+  Forcene a função para efetuar transferências monetárias entre contas.
   """
 
   @doc """
-  Transforma a entrada do usuário para verificar o código da moeda
+  Transforma a entrada do usuário para verificar o código da moeda.
 
   """
   def cedula(usuarios, usuario) do
@@ -14,7 +14,7 @@ defmodule Transacao do
   end
 
   @doc """
-  Converte todos os caracteres para maiúsculo e a `String` em um `Atom`.
+  Converte para `Atom` e todos os caracteres para maiúsculo.
 
   """
   def up_atom(moeda) do
@@ -74,6 +74,14 @@ defmodule Transacao do
   @doc """
   Verifica se o usuário possui algum dinheiro em sua conta.
 
+  ## Exemplo
+
+    - iex> Transacao.possui_dinheiro([bob: [USD: 0], :bob)
+      :error
+    
+    - iex> Transacao.possui_dinheiro([marceline: [AED: 550], :marceline)
+      :ok
+
   """
   def possui_dinheiro(usuarios, usuario) do
     total = Keyword.values(usuarios[usuario])
@@ -132,7 +140,7 @@ defmodule Transacao do
   end
 
   @doc """
-  Valida entrada do usuário para aceitar apenas número inteiro positivo.
+  Valida entrada do usuário para aceitar apenas números inteiros positivos.
 
   """
   def valor do
@@ -149,6 +157,11 @@ defmodule Transacao do
   @doc """
   Verifica se o usuário possui o dinheiro que deseja transferir.
 
+  ## Exemplo
+
+    iex> Transacao.verifica_valor([john: [USD: 60]], :john, :USD, 10) 
+    10
+
   """
   def verifica_valor(usuarios, usuario, moeda, quantia) do
     if Keyword.get(usuarios[usuario], moeda) < quantia do
@@ -162,6 +175,10 @@ defmodule Transacao do
   Realiza a operação de rateio de valores.
 
   Por padrão :stone quem recebe parte da divisão.
+
+  ## Exemplo
+
+    iex> Transacao.rateio([john: [USD: 100], stone: [USD: 0]], :USD, 100) == [90, [john: [USD: 100], stone: [USD: 10]]]
 
   """
   def rateio(usuarios, moeda, quantia) do
