@@ -15,7 +15,7 @@ defmodule Critico do
   end
 
   @doc """
-  Interrompe a execução do programa caso o dinheiro de uma transação não exista.
+  Interrompe a execução do programa caso o dinheiro de uma transação não exista ou seja insuficiente para realiza-la.
 
   """
   def dinheiro_falha(quantia) do
