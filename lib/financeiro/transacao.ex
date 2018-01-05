@@ -76,11 +76,11 @@ defmodule Transacao do
 
   ## Exemplo
 
-    - iex> Transacao.dinheiro?([bob: [USD: 0], :bob)
+    - iex> Transacao.dinheiro?([bob: [USD: 0]], :bob)
       :error
     
-    - iex> Transacao.dinheiro?([marceline: [AED: 550], :marceline)
-      :ok
+    - iex> Transacao.dinheiro?([marceline: [AED: 550]], :marceline)
+      nil
 
   """
   def dinheiro?(usuarios, usuario) do
