@@ -11,7 +11,6 @@ defmodule Financeiro.Application do
       # Inicia um worker chamando: Financeiro.Worker.start_link(arg)
       # {Financeiro.Worker, arg},
     ]
-
     # Veja https://hexdocs.pm/elixir/Supervisor.html
     # para outras estratégias e opções suportadas
     opts = [strategy: :one_for_one, name: Financeiro.Supervisor]
