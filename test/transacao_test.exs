@@ -6,9 +6,7 @@ defmodule TransacaoTest do
   end
   
   test "apenas números" do
-    quantia = "23232142\n"
-    quantia = String.trim(quantia)
-    assert quantia = String.to_integer(quantia)
+    assert "23232142\n" |> String.trim() |> String.to_integer() == 23232142
   end
 
   test "transfere dinheiro entre contas sem rateio" do
