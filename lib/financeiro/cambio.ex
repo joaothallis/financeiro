@@ -40,8 +40,8 @@ defmodule Cambio do
       iex> Cambio.realiza_cambio([john: [BRL: 0, USD: 100]], :john, :USD, :BRL, 100)
       [john: [BRL: 200, USD: 0]]
 
-      iex> Cambio.realiza_cambio([stone: [AED: 10, IRR: 0]], :john, :AED, :IRR, 10)
-      [stone: [AED: 0, IRR: 10]]
+      iex> Cambio.realiza_cambio([stone: [AED: 10, IRR: 0]], :stone, :AED, :IRR, 10)
+      [stone: [AED: 0, IRR: 20]]
   
   """
   def realiza_cambio(usuarios, usuario, entrada, saida, quantia) do
@@ -62,8 +62,8 @@ defmodule Cambio do
       iex> Cambio.remove_moeda([maria: [USD: 100]], :maria, :USD, 50)
       [maria: [USD: 50]]
 
-      iex> Cambio.remove_moeda([stone: [BRL: 200]], :stone, :USD, 28)
-      [stone: [USD: 172]]
+      iex> Cambio.remove_moeda([stone: [BRL: 200]], :stone, :BRL, 28)
+      [stone: [BRL: 172]]
 
   """
   def remove_moeda(usuarios, usuario, entrada, quantia) do
@@ -78,8 +78,8 @@ defmodule Cambio do
       iex> Cambio.add_moeda([maria: [USD: 100]], :maria, :USD, 50)
       [maria: [USD: 150]]
 
-      iex> Cambio.add_moeda([stone: [BRL: 200]], :stone, :USD, 28)
-      [stone: [USD: 228]]
+      iex> Cambio.add_moeda([stone: [BRL: 200]], :stone, :BRL, 28)
+      [stone: [BRL: 228]]
 
   """
   def add_moeda(usuarios, usuario, saida, quantia_nova) do
@@ -117,7 +117,7 @@ defmodule Cambio do
       1
 
       iex> Cambio.obtem_peso(:USD)
-      5
+      10
 
   """
   def obtem_peso(moeda) do
@@ -136,7 +136,7 @@ defmodule Cambio do
   ## Exemplos
 
       iex> Cambio.taxa(15, 5) 
-      3
+      3.0
 
       iex> Cambio.taxa(1, 10)
       0.1
