@@ -19,12 +19,7 @@ defmodule Financeiro do
 
   """
   def usr_padrao do
-    [
-      # Usuários de exemplo. 
-      maria: Moeda.novo(),
-      stone: Moeda.novo(),
-      john: Moeda.novo()
-    ] 
+    [maria: Moeda.novo(), stone: Moeda.novo(), john: Moeda.novo()] 
   end
 
   @doc """
