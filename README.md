@@ -49,7 +49,7 @@ Ao criar uma conta, ela começa sem dinheiro. Para adicionar dinheiro realize um
 
 ### Lançamento principal
 
-1.0.0  
+[1.0.0](https://github.com/joaothallis/financeiro/releases/tag/v1.0)  
 
 ### Status do Código
 
