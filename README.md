@@ -39,7 +39,7 @@ Ao criar uma conta, ela começa sem dinheiro. Para adicionar dinheiro realize um
 
 - Os montantes de dinheiro são representados como `Integer`. Exemplo: `R$ 1,00` equivale a `100`.
 
-- Todas as funções aritméticas trabalham em `Integer`.
+- Todas as funções aritméticas trabalham em `Integer`, exceto no cálculo das taxas das moedas, onde trabalha com `Float`.
 
 - As transações de dinheiro só podem ser executadas quando ambos os operandos são da mesma moeda.
 
