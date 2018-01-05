@@ -69,7 +69,7 @@ defmodule Financeiro do
 
   ## Exemplos
 
-      iex> Financeiro.string_atom("Roberta \n)
+      iex> Financeiro.string_atom("Roberta \n")
       :Roberta
 
       iex> Financeiro.string_atom("Lucas \n")
