@@ -22,7 +22,7 @@ defmodule TransacaoTest do
   end
 
   test "não possui dinheiro" do
-    assert Transacao.possui_dinheiro(Financeiro.usr_padrao(), :john) == :error
+    assert Transacao.dinheiro?(Financeiro.usr_padrao(), :john) == :error
   end
 
   test "moeda com valor nulo" do

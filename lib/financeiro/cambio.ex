@@ -8,7 +8,7 @@ defmodule Cambio do
 
   """
   def cambio_moeda(usuarios, usuario) do
-    if Transacao.possui_dinheiro(usuarios, usuario) == :error do
+    if Transacao.dinheiro?(usuarios, usuario) == :error do
       Financeiro.alternativas(usuarios, usuario)
     end
     entrada = Transacao.cedula(usuarios, usuario)
@@ -16,7 +16,7 @@ defmodule Cambio do
     quantia = Transacao.valor()
     Transacao.verifica_valor(usuarios, usuario, entrada, quantia)
     saida = Transacao.cedula(usuarios, usuario)
-    if valida_moeda(entrada, saida) == :error do
+    if moeda?(entrada, saida) == :error do
       IO.puts "Não é possível realizar câmbio para a mesma moeda. Digite as moedas novamente."
       cambio_moeda(usuarios, usuario)
     end
@@ -98,11 +98,11 @@ defmodule Cambio do
 
   ## Exemplo
 
-      iex> Cambio.valida_moeda(:USD, :USD)
+      iex> Cambio.moeda?(:USD, :USD)
       :error
 
   """
-  def valida_moeda(entrada, saida) do
+  def moeda?(entrada, saida) do
     if entrada == saida do
       :error
     end

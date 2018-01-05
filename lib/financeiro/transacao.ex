@@ -76,14 +76,14 @@ defmodule Transacao do
 
   ## Exemplo
 
-    - iex> Transacao.possui_dinheiro([bob: [USD: 0], :bob)
+    - iex> Transacao.dinheiro?([bob: [USD: 0], :bob)
       :error
     
-    - iex> Transacao.possui_dinheiro([marceline: [AED: 550], :marceline)
+    - iex> Transacao.dinheiro?([marceline: [AED: 550], :marceline)
       :ok
 
   """
-  def possui_dinheiro(usuarios, usuario) do
+  def dinheiro?(usuarios, usuario) do
     total = Keyword.values(usuarios[usuario])
     if Enum.sum(total) <= 0 do
       IO.puts "Você não possui dinheiro, faça um deposito antes de continuar"
@@ -96,7 +96,7 @@ defmodule Transacao do
 
   """
   def transferencia(usuarios, usuario) do
-    if possui_dinheiro(usuarios, usuario) == :error do
+    if dinheiro?(usuarios, usuario) == :error do
       Financeiro.alternativas(usuarios, usuario)
     end
     referido = IO.gets "Para qual conta deseja realizar a transferência: "

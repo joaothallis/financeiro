@@ -2,7 +2,7 @@ defmodule CambioTest do
   use ExUnit.Case
   
   test "mesma moeda" do
-    assert Cambio.valida_moeda(:USD, :USD) == :error
+    assert Cambio.moeda?(:USD, :USD) == :error
   end
 
   test "remove dinheiro" do
@@ -16,7 +16,7 @@ defmodule CambioTest do
   end
 
   test "moeda invalida" do
-    assert Cambio.valida_moeda(:AED, :AED) == :error
+    assert Cambio.moeda?(:AED, :AED) == :error
   end
 
   test "obtém peso" do
