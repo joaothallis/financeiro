@@ -1,5 +1,6 @@
 defmodule TransacaoTest do
   use ExUnit.Case
+  doctest Transacao
   
   test "valida moeda" do
     assert Transacao.ver_cedula(Financeiro.usr_padrao(), :john, :BRL) == :BRL

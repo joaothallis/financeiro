@@ -64,10 +64,10 @@ defmodule Financeiro do
 
   ## Exemplos
 
-      iex> Financeiro.string_atom("Roberta \n")
-      :Roberta
+      iex> Financeiro.string_atom("Ana_Roberta")
+      :Ana_Roberta
 
-      iex> Financeiro.string_atom("Lucas \n")
+      iex> Financeiro.string_atom(" Lucas ")
       :Lucas
   
   """

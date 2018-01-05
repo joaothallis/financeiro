@@ -178,7 +178,8 @@ defmodule Transacao do
 
   ## Exemplo
 
-    iex> Transacao.rateio([john: [USD: 100], stone: [USD: 0]], :USD, 100) == [90, [john: [USD: 100], stone: [USD: 10]]]
+    iex> Transacao.rateio([john: [USD: 100], stone: [USD: 0]], :USD, 100) 
+    [90, [john: [USD: 100], stone: [USD: 10]]]
 
   """
   def rateio(usuarios, moeda, quantia) do

@@ -1,5 +1,6 @@
 defmodule CambioTest do
   use ExUnit.Case
+  doctest Cambio
   
   test "mesma moeda" do
     assert Cambio.moeda?(:USD, :USD) == :error

@@ -1,5 +1,6 @@
 defmodule CadastroTest do
   use ExUnit.Case
+  doctest Cadastro
   
   test "apenas letras" do
     # Aceita apenas caracteres do alfabeto
