@@ -38,12 +38,12 @@ defmodule Financeiro do
   def alfa(usuarios) do
     escolha = IO.gets "Sistema Financeiro\nDigite 1 para entrar ou 2 para criar um cadastro: "
     escolha = String.trim(escolha)
-    cond do
-      escolha == "1" ->
+    case escolha do
+      "1" ->
         acessar(usuarios)
-      escolha == "2" ->
+      "2" ->
         Cadastro.cria_usuario(usuarios)
-      true ->
+      _ ->
         IO.puts "Digite apenas 1 ou 2"
         alfa(usuarios)
     end
@@ -87,17 +87,17 @@ defmodule Financeiro do
   """
   def alternativas(usuarios, usuario) do
     opcao = IO.gets "Digite 1 para verificar saldo, 2 para realizar depósito, 3 para realizar transferência ou 4 para realizar câmbio de moedas: "
-    cond do
-      opcao == "1\n" ->
+    case opcao do
+      "1\n" ->
         Consulta.verifica_saldo(usuarios, usuario)
         alternativas(usuarios, usuario)
-      opcao == "2\n" ->
+      "2\n" ->
         Transacao.deposito(usuarios, usuario)
-      opcao == "3\n" ->
+      "3\n" ->
         Transacao.transferencia(usuarios, usuario)
-      opcao == "4\n" ->
+      "4\n" ->
         Cambio.cambio_moeda(usuarios, usuario)
-      true ->
+      _ ->
         IO.puts "Digite apenas 1, 2, 3 ou 4"
         alternativas(usuarios, usuario)
     end
