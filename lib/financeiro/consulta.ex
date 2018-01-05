@@ -30,14 +30,14 @@ defmodule Consulta do
 
   ## Exemplo
 
-      iex> Consulta.verifica_usuario([john: 104, stone: 220], :rita)
+      iex> Consulta.usuario?([john: 104, stone: 220], :rita)
       :error
 
-      iex> Consulta.verifica_usuario([john: 233, stone: 10], :stone) 
+      iex> Consulta.usuario?([john: 233, stone: 10], :stone) 
       {:ok, 10}
       
   """
-  def verifica_usuario(usuarios, usuario) do
+  def usuario?(usuarios, usuario) do
     Keyword.fetch(usuarios, usuario) 
   end
 end

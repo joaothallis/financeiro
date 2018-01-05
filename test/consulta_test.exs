@@ -6,10 +6,10 @@ defmodule ConsultaTest do
   end
 
   test "usuario não existe" do
-    assert Consulta.verifica_usuario([john: 104, stone: 220], :rita) == :error
+    assert Consulta.usuario?([john: 104, stone: 220], :rita) == :error
   end
 
   test "usuario existe" do
-    assert Consulta.verifica_usuario([john: 233, stone: 10], :stone) == {:ok, 10}
+    assert Consulta.usuario?([john: 233, stone: 10], :stone) == {:ok, 10}
   end
 end

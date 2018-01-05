@@ -51,7 +51,7 @@ defmodule Financeiro do
   def acessar(usuarios) do
     usuario = IO.gets "Digite seu nome de usuário: "
     usuario = string_atom(usuario)
-    case Consulta.verifica_usuario(usuarios, usuario) do
+    case Consulta.usuario?(usuarios, usuario) do
       :error ->
         IO.puts "Usuário não existe."
         acessar(usuarios)

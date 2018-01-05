@@ -17,7 +17,7 @@ defmodule Cadastro do
       _ -> [usuario] = usuario
     end
     usuario = Financeiro.string_atom(usuario)
-    case Keyword.fetch(usuarios, usuario) do
+    case Consulta.usuario?(usuarios, usuario) do
       :error ->
         usuarios = Keyword.put(usuarios, usuario, Moeda.novo())
         IO.puts "Usuário #{usuario} criado com sucesso."
