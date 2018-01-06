@@ -6,16 +6,17 @@ defmodule Cadastro do
   @doc """
   Cria um novo usuário para a estrutura de dados.
 
-  Novo usuário recebe uma lista com todas as moedas contendo o valor: 0.
+  A nova conta de usuário recebe uma lista com todas as moedas contendo o valor: 0.
 
   """
   def cria_usuario(usuarios) do
-    case usuario = Regex.run(~r/^[a-zA-Z]+$/, IO.gets "Escreva um nome de usuário: ") do
-      nil -> 
-        IO.puts "Digite apenas letras."
-        cria_usuario(usuarios)
-      _ -> [usuario] = usuario
-    end
+    usuario =
+      case usuario = Regex.run(~r/^[a-zA-Z]+$/, IO.gets "Escreva um nome de usuário: ") do
+        nil ->
+          IO.puts "Digite apenas letras."
+          cria_usuario(usuarios)
+        _ -> Enum.join(usuario)
+      end
     [usuarios, usuario] = result_criar(usuarios, usuario)
     Financeiro.alternativas(usuarios, usuario)
   end
