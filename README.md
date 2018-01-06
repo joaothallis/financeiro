@@ -43,7 +43,7 @@ Ao criar uma conta, ela começa sem dinheiro. Para adicionar dinheiro realize um
 
 - As transações de dinheiro só podem ser executadas quando ambos os operandos são da mesma moeda.
 
-- Por padrão o usuário `stone` recebe a taxa de rateio.
+- Por padrão a conta `stone` recebe a taxa de rateio.
 
 - Todas moedas possem `1` de `taxa` de câmbio, exceto `AED`, `BRL`, `USD`.
 
