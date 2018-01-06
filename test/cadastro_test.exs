@@ -13,7 +13,7 @@ defmodule CadastroTest do
   
   test "aceita apenas letras" do
     # Aceita apenas caracteres do alfabeto
-    assert Regex.run(~r/^[a-zA-Z]+$/, "Lucas")
+    assert Regex.run(~r/^[a-zA-Z]+$/, "Lucas") == ["Lucas"]
     refute Regex.run(~r/^[a-zA-Z]+$/, " donald^ ")
   end
 end
