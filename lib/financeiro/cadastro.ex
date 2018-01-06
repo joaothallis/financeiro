@@ -16,15 +16,31 @@ defmodule Cadastro do
         cria_usuario(usuarios)
       _ -> [usuario] = usuario
     end
+    [usuarios, usuario] = result_criar(usuarios, usuario)
+    Financeiro.alternativas(usuarios, usuario)
+  end
+
+  @doc """
+  Converte nome de usuário para atom e cria um novo usuário no sistema.
+
+  Se o nome de usuário de usuário já existir na estrutura de dados, será feito um acesso no sistema.
+
+  ## Exemplo
+
+      iex> Cadastro.result_criar(Financeiro.usr_padrao(), "john") 
+      [Financeiro.usr_padrao(), :john]  
+     
+  """
+  def result_criar(usuarios, usuario) do
     usuario = Financeiro.string_atom(usuario)
-    case Consulta.usuario?(usuarios, usuario) do
-      :error ->
-        usuarios = Keyword.put(usuarios, usuario, Moeda.novo())
-        IO.puts "Usuário #{usuario} criado com sucesso."
-        Financeiro.alternativas(usuarios, usuario)
-      _ ->
-        IO.puts "Esse nome de usuário já existe."
-        cria_usuario(usuarios)
-    end
+      case Consulta.usuario?(usuarios, usuario) do
+        :error ->
+          IO.puts "Usuário #{usuario} criado com sucesso."
+          usuarios = Keyword.put(usuarios, usuario, Moeda.novo())
+          [usuarios, usuario]
+        _ ->
+          IO.puts "Esse nome de usuário já existe. Acesso realizado com sucesso."
+          [usuarios, usuario]
+      end
   end
 end
