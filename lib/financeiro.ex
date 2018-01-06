@@ -9,7 +9,7 @@ defmodule Financeiro do
 
   """
   def main([]) do
-    alfa(usr_padrao())
+    usr_padrao() |> alfa()
   end
 
   @doc """
