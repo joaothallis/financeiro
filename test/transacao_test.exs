@@ -1,12 +1,12 @@
 defmodule TransacaoTest do
   use ExUnit.Case
   doctest Transacao
-  
+
   test "valida moeda" do
     assert Transacao.ver_cedula(Financeiro.usr_padrao(), :john, :BRL) == :BRL
   end
   
-  test "apenas números" do
+  test "string para inteiro" do
     assert "23232142\n" |> String.trim() |> String.to_integer() == 23232142
   end
 
