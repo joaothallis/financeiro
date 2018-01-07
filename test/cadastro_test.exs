@@ -26,7 +26,7 @@ defmodule CadastroTest do
     result = Keyword.put(Financeiro.usr_padrao(), :steve, Moeda.novo())
     assert Cadastro.add_conta(Financeiro.usr_padrao(), :steve) == result
   end
-  
+
   test "aceita apenas letras" do
     # Aceita apenas caracteres do alfabeto
     assert Regex.run(~r/^[a-zA-Z]+$/, "Lucas") == ["Lucas"]

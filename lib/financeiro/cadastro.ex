@@ -10,7 +10,7 @@ defmodule Cadastro do
 
   """
   def cria_usuario(usuarios) do
-    usuario = IO.gets "Escreva um nome de usuário: "
+    usuario = Financeiro.entrada("Escreva um nome de usuário: ")
     if Regex.run(~r/^[a-zA-Z]+$/, usuario) == nil do
       IO.puts "Digite apenas letras."
       cria_usuario(usuarios)

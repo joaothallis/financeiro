@@ -8,7 +8,7 @@ defmodule Transacao do
 
   """
   def cedula(usuarios, usuario) do
-    moeda = IO.gets "Qual moeda? "
+    moeda = Financeiro.entrada("Qual moeda? ")
     moeda = up_atom(moeda)
     ver_cedula(usuarios, usuario, moeda)
   end
@@ -52,7 +52,7 @@ defmodule Transacao do
   """
   def deposito(usuarios, usuario) do
     moeda = cedula(usuarios, usuario)
-    quantia = IO.gets "Quanto deseja depositar? "
+    quantia = Financeiro.entrada("Quanto deseja depositar? ")
     quantia = String.trim(quantia)
     case Integer.parse(quantia) do
       {_num, ""} -> :ok
@@ -99,7 +99,7 @@ defmodule Transacao do
     if dinheiro?(usuarios, usuario) == :error do
       Financeiro.alternativas(usuarios, usuario)
     end
-    referido = IO.gets "Para qual conta deseja realizar a transferência: "
+    referido = Financeiro.entrada("Para qual conta deseja realizar a transferência? ")
     referido = Financeiro.string_atom(referido)
     if referido == usuario do
       IO.puts "Você não pode realizar transferência para sua conta. Para adicionar dinheiro a sua conta realize um deposito."
@@ -140,17 +140,16 @@ defmodule Transacao do
   end
 
   @doc """
-  Valida entrada do usuário para aceitar apenas números inteiros positivos.
+  Valida a entrada do usuário para aceitar apenas números inteiros positivos.
 
   """
   def valor do
-    case quantia = Regex.run(~r/^(0*[1-9][0-9]*)$/, IO.gets "Quantia: ") do
+    quantia = Financeiro.entrada("Quantia: ")
+    case Regex.run(~r/^(0*[1-9][0-9]*)$/, quantia) do
       nil ->
         IO.puts "Digite apenas números."
         valor()
-      _ ->
-        [quantia, _] = quantia
-        String.to_integer(quantia)
+      _ -> String.to_integer(quantia)
     end
   end
 
