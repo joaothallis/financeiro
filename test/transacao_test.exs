@@ -21,7 +21,7 @@ defmodule TransacaoTest do
   end
 
   test "deposita dinheiro" do
-    assert Transacao.deposito(Financeiro.usr_padrao(), :maria, :AED, 250000) == :ok
+    assert Transacao.deposito(Financeiro.usr_padrao(), :maria, :AED, 250000)
   end
 
   test "transfere dinheiro entre contas sem rateio" do
