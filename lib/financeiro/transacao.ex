@@ -75,7 +75,7 @@ defmodule Transacao do
   Verifica se o usuário possui algum dinheiro em sua conta.
 
   ## Exemplo
-
+(
     - iex> Transacao.dinheiro?([bob: [USD: 0]], :bob)
       :error
     
@@ -107,23 +107,27 @@ defmodule Transacao do
     Financeiro.alternativas(usuarios, usuario)
   end
 
-def relativo(usuarios, usuario) do
-  if dinheiro?(usuarios, usuario) == :error do
-    Financeiro.alternativas(usuarios, usuario)
+  @doc """
+  Verifica se é válida a conta que vai receber a transferência.
+  
+  """
+  def relativo(usuarios, usuario) do
+    if dinheiro?(usuarios, usuario) == :error do
+      Financeiro.alternativas(usuarios, usuario)
+    end
+    referido = Financeiro.entrada("Para qual conta deseja realizar a transferência? ")
+    referido = Financeiro.string_atom(referido)
+    if referido == usuario do
+      IO.puts "Você não pode realizar transferência para sua conta. Para adicionar dinheiro a sua conta realize um deposito."
+      Financeiro.alternativas(usuarios, usuario)
+    end
+    case Consulta.usuario?(usuarios, referido) do
+      :error ->
+        IO.puts "Essa conta não existe."
+        transferencia(usuarios, usuario)
+      _ -> referido
+    end
   end
-  referido = Financeiro.entrada("Para qual conta deseja realizar a transferência? ")
-  referido = Financeiro.string_atom(referido)
-  if referido == usuario do
-    IO.puts "Você não pode realizar transferência para sua conta. Para adicionar dinheiro a sua conta realize um deposito."
-    Financeiro.alternativas(usuarios, usuario)
-  end
-  case Consulta.usuario?(usuarios, referido) do
-    :error ->
-      IO.puts "Essa conta não existe."
-      transferencia(usuarios, usuario)
-    _ -> referido
-  end
-end
 
   @doc """
   Realiza transferência de dinheiro entre contas.
@@ -132,11 +136,12 @@ end
   def realiza_transferencia(usuarios, usuario, moeda, quantia, referido) do
     verifica_valor(usuarios, usuario, moeda, quantia)
     usuarios = Cambio.remove_moeda(usuarios, usuario, moeda, quantia)
-    if referido != :stone do
-      [quantia, usuarios] = rateio(usuarios, moeda, quantia)
-    else
-      quantia
-    end
+    [quantia, usuarios] =
+      if referido != :stone do
+        rateio(usuarios, moeda, quantia)
+      else
+        [quantia, usuarios]
+      end
     IO.puts "Você transferiu #{quantia} #{moeda} para #{referido}."
     Cambio.add_moeda(usuarios, referido, moeda, quantia)
   end

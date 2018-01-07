@@ -15,20 +15,20 @@ defmodule TransacaoTest do
   test "moeda inválida" do
     assert capture_io([input: "BRL"], fn -> Transacao.ver_cedula(Financeiro.usr_padrao(), :john, :XYZ) end) == "Digite uma sigla válida.\nQual moeda? "
   end
-  
+
   test "string para inteiro" do
     assert "23232142\n" |> String.trim() |> String.to_integer() == 23232142
   end
 
   test "transfere dinheiro entre contas sem rateio" do
     usuarios = [bob: [USD: 60], stone: [USD: 60]]
-    result = [bob: [USD: 30], stone: [USD: 90]] 
+    result = [bob: [USD: 30], stone: [USD: 90]]
     assert Transacao.realiza_transferencia(usuarios, :bob, :USD, 30, :stone) == result
-  end 
+  end
 
   test "transfere dinheiro entre contas com rateio" do
     usuarios = [bob: [USD: 100], john: [USD: 0], stone: [USD: 0]]
-    result = [bob: [USD: 0], john: [USD: 90], stone: [USD: 10]] 
+    result = [bob: [USD: 0], john: [USD: 90], stone: [USD: 10]]
     assert Transacao.realiza_transferencia(usuarios, :bob, :USD, 100, :john) == result
   end
 
@@ -56,5 +56,5 @@ defmodule TransacaoTest do
 
   test "converte para maiúsculo e em atom" do
     assert Transacao.up_atom("blr") == :BLR
-  end 
+  end
 end
