@@ -102,13 +102,13 @@ defmodule Financeiro do
         alternativas(usuarios, usuario)
       "2" ->
         usuarios = Transacao.deposito(usuarios, usuario, Transacao.cedula(usuarios, usuario), Transacao.valor())
-        Financeiro.alternativas(usuarios, usuario)
+        alternativas(usuarios, usuario)
       "3" -> 
         usuarios = Transacao.transferencia(usuarios, usuario)
-        Financeiro.alternativas(usuarios, usuario)
+        alternativas(usuarios, usuario)
       "4" -> 
         usuarios = Cambio.cambio_moeda(usuarios, usuario)
-        Financeiro.alternativas(usuarios, usuario)
+        alternativas(usuarios, usuario)
       _ ->
         IO.puts "Digite apenas 1, 2, 3 ou 4"
         alternativas(usuarios, usuario)
