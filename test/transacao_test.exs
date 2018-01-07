@@ -17,11 +17,11 @@ defmodule TransacaoTest do
   end
 
   test "string para inteiro" do
-    assert "23232142\n" |> String.trim() |> String.to_integer() == 23232142
+    assert "23232142\n" |> String.trim() |> String.to_integer() == 23_232_142
   end
 
   test "deposita dinheiro" do
-    assert Transacao.deposito(Financeiro.usr_padrao(), :maria, :AED, 250000)
+    assert Transacao.deposito(Financeiro.usr_padrao(), :maria, :AED, 250_000)
   end
 
   test "transfere dinheiro entre contas sem rateio" do
@@ -44,8 +44,8 @@ defmodule TransacaoTest do
     assert Transacao.dinheiro?([steve: [BRL: 1150]], :steve) != :error
   end
 
-  test "moeda com valor nulo" do
-    assert Keyword.get([USD: 0], :USD) == 0
+  test "moeda com quantia" do
+    assert Transacao.moeda_nulo([jon: [USD: 500]], :jon, :USD) == nil
   end
 
   test "possui quantia" do
