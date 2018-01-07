@@ -10,12 +10,11 @@ defmodule Cadastro do
 
   """
   def cria_usuario(usuarios) do
-    usuario = Regex.run(~r/^[a-zA-Z]+$/, IO.gets "Escreva um nome de usuário: ")
-    if usuario == nil do
+    usuario = IO.gets "Escreva um nome de usuário: "
+    if Regex.run(~r/^[a-zA-Z]+$/, usuario) == nil do
       IO.puts "Digite apenas letras."
       cria_usuario(usuarios)
     else
-      usuario = Enum.join(usuario)
       result_criar(usuarios, usuario)
     end    
   end
