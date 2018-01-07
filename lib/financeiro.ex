@@ -31,7 +31,7 @@ defmodule Financeiro do
 
   """
   def alfa(usuarios) do
-    escolha = IO.gets "Sistema Financeiro\nDigite 1 para entrar ou 2 para criar um cadastro: "
+    escolha = entrada("Sistema Financeiro\nDigite 1 para entrar ou 2 para criar um cadastro: ")
     escolha = String.trim(escolha)
     case escolha do
       "1" ->
@@ -44,6 +44,10 @@ defmodule Financeiro do
         IO.puts "Digite apenas 1 ou 2"
         alfa(usuarios)
     end
+  end
+
+  def entrada(msg) do
+    IO.gets msg
   end
 
   @doc """
