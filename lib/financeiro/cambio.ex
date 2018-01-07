@@ -29,7 +29,7 @@ defmodule Cambio do
       Financeiro.alternativas(usuarios, usuario)
     end
     entrada = Transacao.cedula(usuarios, usuario)
-    IO.write "Primeira moeda: #{entrada}."
+    IO.write "Primeira moeda: #{entrada}. "
     entrada
   end
 
