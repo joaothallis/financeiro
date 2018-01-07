@@ -83,7 +83,7 @@ defmodule Cambio do
 
   """
   def add_moeda(usuarios, usuario, saida, quantia_nova) do
-    Critico.dinheiro_falha(quantia_nova)
+    Critico.montante?(quantia_nova)
     put_in (usuarios[usuario])[saida], (usuarios[usuario])[saida] + quantia_nova
   end
 

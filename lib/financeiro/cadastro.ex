@@ -15,7 +15,7 @@ defmodule Cadastro do
       IO.puts "Digite apenas letras."
       cria_usuario(usuarios)
     else
-      result_criar(usuarios, usuario)
+      novo?(usuarios, usuario)
     end    
   end
 
@@ -26,11 +26,11 @@ defmodule Cadastro do
 
   ## Exemplo
 
-      iex> Cadastro.result_criar(Financeiro.usr_padrao(), "leila") 
+      iex> Cadastro.novo?(Financeiro.usr_padrao(), "leila") 
       :ok
      
   """
-  def result_criar(usuarios, usuario) do
+  def novo?(usuarios, usuario) do
     usuario = Financeiro.string_atom(usuario)
       case Consulta.usuario?(usuarios, usuario) do
         :error -> IO.puts "Usuário #{usuario} criado com sucesso."

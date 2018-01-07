@@ -15,11 +15,11 @@ defmodule CadastroTest do
   end
 
   test "cria nova conta" do
-    assert Cadastro.result_criar(Financeiro.usr_padrao(), "jay") == :ok
+    assert Cadastro.novo?(Financeiro.usr_padrao(), "jay") == :ok
   end
 
   test "conta já existente" do
-    assert Cadastro.result_criar(Financeiro.usr_padrao(), "john") == :ok
+    assert Cadastro.novo?(Financeiro.usr_padrao(), "john") == :ok
   end
 
   test "adiciona conta" do
