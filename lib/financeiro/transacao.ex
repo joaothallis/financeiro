@@ -50,25 +50,10 @@ defmodule Transacao do
   Adiciona dinheiro a conta atual.
 
   """
-  def deposito(usuarios, usuario) do
-    moeda = cedula(usuarios, usuario)
-    quantia = Financeiro.entrada("Quanto deseja depositar? ")
-    quantia = String.trim(quantia)
-    case Integer.parse(quantia) do
-      {_num, ""} -> :ok
-      _ ->
-        IO.puts "Digite apenas números."
-        deposito(usuarios, usuario)
-    end
-    quantia = String.to_integer(quantia)
-    if quantia <= 0 do
-      IO.puts "Digite um valor positivo."
-      deposito(usuarios, usuario)
-    end
-      usuarios = put_in (usuarios[usuario])[moeda], (usuarios[usuario])[moeda] + quantia
-      total = Keyword.get(usuarios[usuario], moeda)
-      IO.puts "Seu saldo atual é de #{total} #{moeda}"
-      Financeiro.alternativas(usuarios, usuario)
+  def deposito(usuarios, usuario, moeda, quantia) do
+    usuarios = put_in (usuarios[usuario])[moeda], (usuarios[usuario])[moeda] + quantia
+    total = Keyword.get(usuarios[usuario], moeda)
+    IO.puts "Seu saldo atual é de #{total} #{moeda}"
   end
 
   @doc """
@@ -154,7 +139,7 @@ defmodule Transacao do
     quantia = Financeiro.entrada("Quantia: ")
     case Regex.run(~r/^(0*[1-9][0-9]*)$/, quantia) do
       nil ->
-        IO.puts "Digite apenas números."
+        IO.puts "Digite apenas números positivos."
         valor()
       _ -> String.to_integer(quantia)
     end

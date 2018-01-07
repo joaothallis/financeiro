@@ -100,7 +100,9 @@ defmodule Financeiro do
       "1" ->
         Consulta.verifica_saldo(usuarios, usuario)
         alternativas(usuarios, usuario)
-      "2" -> Transacao.deposito(usuarios, usuario)
+      "2" ->
+        Transacao.deposito(usuarios, usuario, Transacao.cedula(usuarios, usuario), Transacao.valor())
+        Financeiro.alternativas(usuarios, usuario)
       "3" -> Transacao.transferencia(usuarios, usuario)
       "4" -> Cambio.cambio_moeda(usuarios, usuario)
       _ ->

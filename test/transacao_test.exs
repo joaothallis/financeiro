@@ -20,6 +20,10 @@ defmodule TransacaoTest do
     assert "23232142\n" |> String.trim() |> String.to_integer() == 23232142
   end
 
+  test "deposita dinheiro" do
+    assert Transacao.deposito(Financeiro.usr_padrao(), :maria, :AED, 250000) == :ok
+  end
+
   test "transfere dinheiro entre contas sem rateio" do
     usuarios = [bob: [USD: 60], stone: [USD: 60]]
     result = [bob: [USD: 30], stone: [USD: 90]]
