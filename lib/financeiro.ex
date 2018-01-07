@@ -33,8 +33,9 @@ defmodule Financeiro do
   def alfa(usuarios) do
     escolha = entrada("Sistema Financeiro\nDigite 1 para entrar ou 2 para criar um cadastro: ")
     case escolha do
-      "1" ->
-        acessar(usuarios)
+      "1" -> 
+        usuario = acessar(usuarios)
+        alternativas(usuarios, usuario)
       "2" ->
         usuario = Cadastro.cria_usuario(usuarios)
         usuarios = Cadastro.add_conta(usuarios, usuario)
@@ -65,11 +66,11 @@ defmodule Financeiro do
   def acessar(usuarios) do
     usuario = entrada("Digite seu nome de usuário: ")
     usuario = string_atom(usuario)
-    case Consulta.usuario?(usuarios, usuario) do
-      :error ->
-        IO.puts "Usuário não existe."
-        acessar(usuarios)
-      _ -> alternativas(usuarios, usuario)
+    if Consulta.usuario?(usuarios, usuario) == :error do
+      IO.puts "Usuário não existe."
+      alfa(usuarios)
+    else
+      usuario
     end
   end
 

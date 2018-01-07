@@ -11,4 +11,8 @@ defmodule FinanceiroTest do
   test "remove espaço vazio e transforma em atom" do
     assert Financeiro.string_atom("john \n") == :john
   end
+
+  test "acesso" do
+    assert capture_io([input: "john"], fn -> Financeiro.acessar(Financeiro.usr_padrao()) end)
+  end
 end
