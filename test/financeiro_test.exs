@@ -5,7 +5,7 @@ defmodule FinanceiroTest do
   import ExUnit.CaptureIO
 
   test "escolhe 1" do
-    assert capture_io([input: "1\n"], fn -> Financeiro.entrada("1") end) == "1"
+    assert capture_io([input: "1"], fn -> Financeiro.entrada("Digite:") end) == "Digite:"
   end
 
   test "remove espaço vazio e transforma em atom" do

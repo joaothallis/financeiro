@@ -45,6 +45,14 @@ defmodule Financeiro do
     end
   end
 
+  @doc """
+  Obtém entrada do usuário e remove espaço.
+
+  ## Parâmetro
+
+      - msg: String com a mensagem para o `IO.gets/1`
+
+  """
   def entrada(msg) do
     obter = IO.gets msg
     String.trim(obter)
@@ -55,7 +63,7 @@ defmodule Financeiro do
 
   """
   def acessar(usuarios) do
-    usuario = IO.gets "Digite seu nome de usuário: "
+    usuario = entrada("Digite seu nome de usuário: ")
     usuario = string_atom(usuario)
     case Consulta.usuario?(usuarios, usuario) do
       :error ->
@@ -87,17 +95,14 @@ defmodule Financeiro do
 
   """
   def alternativas(usuarios, usuario) do
-    opcao = IO.gets "Digite 1 para verificar saldo, 2 para realizar depósito, 3 para realizar transferência ou 4 para realizar câmbio de moedas: "
+    opcao = entrada("Digite 1 para verificar saldo, 2 para realizar depósito, 3 para realizar transferência ou 4 para realizar câmbio de moedas: ")
     case opcao do
-      "1\n" ->
+      "1" ->
         Consulta.verifica_saldo(usuarios, usuario)
         alternativas(usuarios, usuario)
-      "2\n" ->
-        Transacao.deposito(usuarios, usuario)
-      "3\n" ->
-        Transacao.transferencia(usuarios, usuario)
-      "4\n" ->
-        Cambio.cambio_moeda(usuarios, usuario)
+      "2" -> Transacao.deposito(usuarios, usuario)
+      "3" -> Transacao.transferencia(usuarios, usuario)
+      "4" -> Cambio.cambio_moeda(usuarios, usuario)
       _ ->
         IO.puts "Digite apenas 1, 2, 3 ou 4"
         alternativas(usuarios, usuario)
