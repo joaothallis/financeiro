@@ -101,9 +101,11 @@ defmodule Financeiro do
         Consulta.verifica_saldo(usuarios, usuario)
         alternativas(usuarios, usuario)
       "2" ->
-        Transacao.deposito(usuarios, usuario, Transacao.cedula(usuarios, usuario), Transacao.valor())
+        usuarios = Transacao.deposito(usuarios, usuario, Transacao.cedula(usuarios, usuario), Transacao.valor())
         Financeiro.alternativas(usuarios, usuario)
-      "3" -> Transacao.transferencia(usuarios, usuario)
+      "3" -> 
+        usuarios = Transacao.transferencia(usuarios, usuario)
+        Financeiro.alternativas(usuarios, usuario)
       "4" -> Cambio.cambio_moeda(usuarios, usuario)
       _ ->
         IO.puts "Digite apenas 1, 2, 3 ou 4"

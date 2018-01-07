@@ -47,13 +47,14 @@ defmodule Transacao do
   end
 
   @doc """
-  Adiciona dinheiro a conta atual.
+  Adiciona dinheiro a conta.
 
   """
   def deposito(usuarios, usuario, moeda, quantia) do
     usuarios = put_in (usuarios[usuario])[moeda], (usuarios[usuario])[moeda] + quantia
     total = Keyword.get(usuarios[usuario], moeda)
     IO.puts "Seu saldo atual é de #{total} #{moeda}"
+    usuarios
   end
 
   @doc """
@@ -88,8 +89,7 @@ defmodule Transacao do
       Financeiro.alternativas(usuarios, usuario)
     end
     quantia = valor()
-    usuarios = realiza_transferencia(usuarios, usuario, moeda, quantia, referido)
-    Financeiro.alternativas(usuarios, usuario)
+    realiza_transferencia(usuarios, usuario, moeda, quantia, referido)
   end
 
   @doc """
