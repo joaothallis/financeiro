@@ -9,7 +9,7 @@ defmodule Financeiro do
 
   """
   def main([]) do
-    alfa(usr_padrao())
+    alfa(usr_padrao(), entrada("Sistema Financeiro\nDigite 1 para entrar ou 2 para criar um cadastro: "))
   end
 
   @doc """
@@ -30,11 +30,10 @@ defmodule Financeiro do
     - usuarios: Lista com os nomes de usuários e suas respectivas quantias de dinheiro.
 
   """
-  def alfa(usuarios) do
-    escolha = entrada("Sistema Financeiro\nDigite 1 para entrar ou 2 para criar um cadastro: ")
+  def alfa(usuarios, escolha) do
     case escolha do
-      "1" -> 
-        usuario = acessar(usuarios)
+      "1" ->
+        usuario = acessar(usuarios, escolha)
         alternativas(usuarios, usuario)
       "2" ->
         usuario = Cadastro.cria_usuario(usuarios)
@@ -42,7 +41,7 @@ defmodule Financeiro do
         Financeiro.alternativas(usuarios, usuario)
       _ ->
         IO.puts "Digite apenas 1 ou 2"
-        alfa(usuarios)
+        alfa(usuarios, escolha)
     end
   end
 
@@ -63,12 +62,12 @@ defmodule Financeiro do
   Realiza acesso a conta do usuário.
 
   """
-  def acessar(usuarios) do
+  def acessar(usuarios, escolha) do
     usuario = entrada("Digite seu nome de usuário: ")
     usuario = string_atom(usuario)
     if Consulta.usuario?(usuarios, usuario) == :error do
       IO.puts "Usuário não existe."
-      alfa(usuarios)
+      alfa(usuarios, escolha)
     else
       usuario
     end

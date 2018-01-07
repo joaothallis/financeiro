@@ -577,8 +577,8 @@ defmodule Moeda do
         peso: 1, 
         expoente: 2},
       MMK: %{
-        nome: "Kyat",                                                   
-        simbolo: "K",    
+        nome: "Kyat",                                                  
+        simbolo: "K",   
         peso: 1, 
         expoente: 2
       },
