@@ -14,7 +14,6 @@ defmodule TransacaoTest do
 
   test "moeda inválida" do
     assert capture_io([input: "BRL"], fn -> Transacao.ver_cedula(Financeiro.usr_padrao(), :john, :XYZ) end) == "Digite uma sigla válida.\nQual moeda? "
-    #assert Transacao.ver_cedula(Financeiro.usr_padrao(), :john, :BRL) == :BRL
   end
   
   test "string para inteiro" do

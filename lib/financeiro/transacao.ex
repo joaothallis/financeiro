@@ -96,21 +96,7 @@ defmodule Transacao do
 
   """
   def transferencia(usuarios, usuario) do
-    if dinheiro?(usuarios, usuario) == :error do
-      Financeiro.alternativas(usuarios, usuario)
-    end
-    referido = Financeiro.entrada("Para qual conta deseja realizar a transferência? ")
-    referido = Financeiro.string_atom(referido)
-    if referido == usuario do
-      IO.puts "Você não pode realizar transferência para sua conta. Para adicionar dinheiro a sua conta realize um deposito."
-      Financeiro.alternativas(usuarios, usuario)
-    end
-    case Consulta.usuario?(usuarios, referido) do
-      :error ->
-        IO.puts "Essa conta não existe."
-        transferencia(usuarios, usuario)
-      _ -> :ok
-    end
+    referido = relativo(usuarios, usuario)
     moeda = cedula(usuarios, usuario)
     if Keyword.get(usuarios[usuario], moeda) <= 0 do
       IO.puts "Você não possui quantia com essa moeda, faça um deposito antes de continuar."
@@ -118,10 +104,26 @@ defmodule Transacao do
     end
     quantia = valor()
     usuarios = realiza_transferencia(usuarios, usuario, moeda, quantia, referido)
-    # Para verificar descomente a linha abaixo
-    # IO.inspect(usuarios, limit: :infinity)
     Financeiro.alternativas(usuarios, usuario)
   end
+
+def relativo(usuarios, usuario) do
+  if dinheiro?(usuarios, usuario) == :error do
+    Financeiro.alternativas(usuarios, usuario)
+  end
+  referido = Financeiro.entrada("Para qual conta deseja realizar a transferência? ")
+  referido = Financeiro.string_atom(referido)
+  if referido == usuario do
+    IO.puts "Você não pode realizar transferência para sua conta. Para adicionar dinheiro a sua conta realize um deposito."
+    Financeiro.alternativas(usuarios, usuario)
+  end
+  case Consulta.usuario?(usuarios, referido) do
+    :error ->
+      IO.puts "Essa conta não existe."
+      transferencia(usuarios, usuario)
+    _ -> referido
+  end
+end
 
   @doc """
   Realiza transferência de dinheiro entre contas.
