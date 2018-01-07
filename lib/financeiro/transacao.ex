@@ -84,12 +84,20 @@ defmodule Transacao do
   def transferencia(usuarios, usuario) do
     referido = relativo(usuarios, usuario)
     moeda = cedula(usuarios, usuario)
+    moeda_nulo(usuarios, usuario, moeda)
+    quantia = valor()
+    realiza_transferencia(usuarios, usuario, moeda, quantia, referido)
+  end
+
+  @doc """
+  Verifica se possui alguma quantia de dinheiro na moeda passada como parâmetro.
+
+  """
+  def moeda_nulo(usuarios, usuario, moeda) do
     if Keyword.get(usuarios[usuario], moeda) <= 0 do
       IO.puts "Você não possui quantia com essa moeda, faça um deposito antes de continuar."
       Financeiro.alternativas(usuarios, usuario)
     end
-    quantia = valor()
-    realiza_transferencia(usuarios, usuario, moeda, quantia, referido)
   end
 
   @doc """
@@ -116,6 +124,10 @@ defmodule Transacao do
 
   @doc """
   Realiza transferência de dinheiro entre contas.
+
+  ## Parâmetro
+
+      - referido: conta que recebe a transferência financeira.
   
   """
   def realiza_transferencia(usuarios, usuario, moeda, quantia, referido) do
