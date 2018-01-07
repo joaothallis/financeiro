@@ -106,7 +106,9 @@ defmodule Financeiro do
       "3" -> 
         usuarios = Transacao.transferencia(usuarios, usuario)
         Financeiro.alternativas(usuarios, usuario)
-      "4" -> Cambio.cambio_moeda(usuarios, usuario)
+      "4" -> 
+        usuarios = Cambio.cambio_moeda(usuarios, usuario)
+        Financeiro.alternativas(usuarios, usuario)
       _ ->
         IO.puts "Digite apenas 1, 2, 3 ou 4"
         alternativas(usuarios, usuario)

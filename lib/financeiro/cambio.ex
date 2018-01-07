@@ -16,8 +16,7 @@ defmodule Cambio do
       IO.puts "Não é possível realizar câmbio para a mesma moeda. Digite as moedas novamente."
       cambio_moeda(usuarios, usuario)
     end
-    usuarios = realiza_cambio(usuarios, usuario, entrada, saida, quantia)
-    Financeiro.alternativas(usuarios, usuario)
+    realiza_cambio(usuarios, usuario, entrada, saida, quantia)
   end
 
   @doc """
@@ -29,6 +28,7 @@ defmodule Cambio do
       Financeiro.alternativas(usuarios, usuario)
     end
     entrada = Transacao.cedula(usuarios, usuario)
+    Transacao.moeda_nulo(usuarios, usuario, entrada) 
     IO.write "Primeira moeda: #{entrada}. "
     entrada
   end
