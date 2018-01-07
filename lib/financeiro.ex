@@ -37,7 +37,9 @@ defmodule Financeiro do
       "1" ->
         acessar(usuarios)
       "2" ->
-        Cadastro.cria_usuario(usuarios)
+        usuario = Cadastro.cria_usuario(usuarios)
+        usuarios = Cadastro.add_conta(usuarios, usuario) 
+        Financeiro.alternativas(usuarios, usuario)
       _ ->
         IO.puts "Digite apenas 1 ou 2"
         alfa(usuarios)

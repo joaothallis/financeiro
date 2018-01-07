@@ -1,47 +1,49 @@
 defmodule Cadastro do
   @moduledoc """
-  Módulo para criar novos usuários.
+  Módulo para criar contas no sistema.
   """
 
   @doc """
-  Cria um novo usuário para a estrutura de dados.
+  Cria uma nova conta na estrutura de dados.
 
   A nova conta de usuário recebe uma lista com todas as moedas contendo o valor: 0.
 
   """
   def cria_usuario(usuarios) do
-    usuario =
-      case usuario = Regex.run(~r/^[a-zA-Z]+$/, IO.gets "Escreva um nome de usuário: ") do
-        nil ->
-          IO.puts "Digite apenas letras."
-          cria_usuario(usuarios)
-        _ -> Enum.join(usuario)
-      end
-    [usuarios, usuario] = result_criar(usuarios, usuario)
-    Financeiro.alternativas(usuarios, usuario)
+    usuario = Regex.run(~r/^[a-zA-Z]+$/, IO.gets "Escreva um nome de usuário: ")
+    if usuario == nil do
+      IO.puts "Digite apenas letras."
+      cria_usuario(usuarios)
+    else
+      usuario = Enum.join(usuario)
+      result_criar(usuarios, usuario)
+    end    
   end
 
   @doc """
-  Converte nome de usuário para atom e cria um novo usuário no sistema.
+  Converte nome de usuário para atom e cria uma nova conta de usuário no sistema.
 
-  Se o nome de usuário de usuário já existir na estrutura de dados, será feito um acesso no sistema.
+  Se o nome de usuário constar na estrutura de dados, será feito um acesso no sistema.
 
   ## Exemplo
 
-      iex> Cadastro.result_criar(Financeiro.usr_padrao(), "john") 
-      [Financeiro.usr_padrao(), :john]  
+      iex> Cadastro.result_criar(Financeiro.usr_padrao(), "leila") 
+      :ok
      
   """
   def result_criar(usuarios, usuario) do
     usuario = Financeiro.string_atom(usuario)
       case Consulta.usuario?(usuarios, usuario) do
-        :error ->
-          IO.puts "Usuário #{usuario} criado com sucesso."
-          usuarios = Keyword.put(usuarios, usuario, Moeda.novo())
-          [usuarios, usuario]
-        _ ->
-          IO.puts "Esse nome de usuário já existe. Acesso realizado com sucesso."
-          [usuarios, usuario]
+        :error -> IO.puts "Usuário #{usuario} criado com sucesso."
+        _ -> IO.puts "Esse nome de usuário já existe. Acesso realizado com sucesso."
       end
+  end
+
+  @doc """
+  Adiciona a nova conta a estrutura de dados.
+
+  """
+  def add_conta(usuarios, usuario) do
+    Keyword.put(usuarios, usuario, Moeda.novo())
   end
 end
