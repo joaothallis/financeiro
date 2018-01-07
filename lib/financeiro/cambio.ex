@@ -4,15 +4,11 @@ defmodule Cambio do
   """
 
   @doc """
-  Obtém e verifica a entrada do usuário para a realização de troca de moeda.
+  Realiza a troca de moeda dentro de uma mesma conta.
 
   """
   def cambio_moeda(usuarios, usuario) do
-    if Transacao.dinheiro?(usuarios, usuario) == :error do
-      Financeiro.alternativas(usuarios, usuario)
-    end
-    entrada = Transacao.cedula(usuarios, usuario)
-    IO.write "Primeira moeda: #{entrada}. "
+    entrada = primeira_moeda(usuarios, usuario)
     quantia = Transacao.valor()
     Transacao.verifica_valor(usuarios, usuario, entrada, quantia)
     saida = Transacao.cedula(usuarios, usuario)
@@ -22,6 +18,19 @@ defmodule Cambio do
     end
     usuarios = realiza_cambio(usuarios, usuario, entrada, saida, quantia)
     Financeiro.alternativas(usuarios, usuario)
+  end
+
+  @doc """
+  Obtém a moeda para realizar câmbio.
+
+  """
+  def primeira_moeda(usuarios, usuario) do
+    if Transacao.dinheiro?(usuarios, usuario) == :error do
+      Financeiro.alternativas(usuarios, usuario)
+    end
+    entrada = Transacao.cedula(usuarios, usuario)
+    IO.write "Primeira moeda: #{entrada}."
+    entrada
   end
 
   @doc """
