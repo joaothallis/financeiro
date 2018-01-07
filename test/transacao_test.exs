@@ -4,12 +4,17 @@ defmodule TransacaoTest do
 
   import ExUnit.CaptureIO
 
-  test "moeda válida" do
+  test "captura moeda" do
     assert capture_io([input: "AED"], fn -> Transacao.cedula(Financeiro.usr_padrao(), :john) end) == "Qual moeda? "
   end
 
-  test "valida moeda" do
+  test "moeda válida" do
     assert Transacao.ver_cedula(Financeiro.usr_padrao(), :john, :BRL) == :BRL
+  end
+
+  test "moeda inválida" do
+    assert capture_io([input: "BRL"], fn -> Transacao.ver_cedula(Financeiro.usr_padrao(), :john, :XYZ) end) == "Digite uma sigla válida.\nQual moeda? "
+    #assert Transacao.ver_cedula(Financeiro.usr_padrao(), :john, :BRL) == :BRL
   end
   
   test "string para inteiro" do
