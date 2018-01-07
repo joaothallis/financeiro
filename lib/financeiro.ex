@@ -19,7 +19,7 @@ defmodule Financeiro do
 
   """
   def usr_padrao do
-    [maria: Moeda.novo(), stone: Moeda.novo(), john: Moeda.novo()] 
+    [maria: Moeda.novo(), stone: Moeda.novo(), john: Moeda.novo()]
   end
 
   @doc """
@@ -38,7 +38,7 @@ defmodule Financeiro do
         acessar(usuarios)
       "2" ->
         usuario = Cadastro.cria_usuario(usuarios)
-        usuarios = Cadastro.add_conta(usuarios, usuario) 
+        usuarios = Cadastro.add_conta(usuarios, usuario)
         Financeiro.alternativas(usuarios, usuario)
       _ ->
         IO.puts "Digite apenas 1 ou 2"
@@ -74,10 +74,10 @@ defmodule Financeiro do
   
   """
   def string_atom(usuario) do
-    usuario = String.trim(usuario) 
+    usuario = String.trim(usuario)
     String.to_atom(usuario)
   end
-  
+
   @doc """
   Opções que o usuário pode escolher.
 

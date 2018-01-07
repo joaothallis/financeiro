@@ -56,7 +56,7 @@ defmodule Transacao do
     quantia = String.trim(quantia)
     case Integer.parse(quantia) do
       {_num, ""} -> :ok
-      _ -> 
+      _ ->
         IO.puts "Digite apenas números."
         deposito(usuarios, usuario)
     end
@@ -89,7 +89,7 @@ defmodule Transacao do
       IO.puts "Você não possui dinheiro, faça um deposito antes de continuar"
       :error
     end
-  end  
+  end
 
   @doc """
   Obtém as entradas necessárias para realiza transferência de dinheiro entre contas do sistema.
@@ -106,11 +106,11 @@ defmodule Transacao do
       Financeiro.alternativas(usuarios, usuario)
     end
     case Consulta.usuario?(usuarios, referido) do
-      :error -> 
+      :error ->
         IO.puts "Essa conta não existe."
         transferencia(usuarios, usuario)
       _ -> :ok
-    end 
+    end
     moeda = cedula(usuarios, usuario)
     if Keyword.get(usuarios[usuario], moeda) <= 0 do
       IO.puts "Você não possui quantia com essa moeda, faça um deposito antes de continuar."
@@ -129,13 +129,13 @@ defmodule Transacao do
   """
   def realiza_transferencia(usuarios, usuario, moeda, quantia, referido) do
     verifica_valor(usuarios, usuario, moeda, quantia)
-    usuarios = Cambio.remove_moeda(usuarios, usuario, moeda, quantia) 
+    usuarios = Cambio.remove_moeda(usuarios, usuario, moeda, quantia)
     if referido != :stone do
       [quantia, usuarios] = rateio(usuarios, moeda, quantia)
     else
       quantia
     end
-    IO.puts "Você transferiu #{quantia} #{moeda} para #{referido}." 
+    IO.puts "Você transferiu #{quantia} #{moeda} para #{referido}."
     Cambio.add_moeda(usuarios, referido, moeda, quantia)
   end
 
@@ -145,10 +145,10 @@ defmodule Transacao do
   """
   def valor do
     case quantia = Regex.run(~r/^(0*[1-9][0-9]*)$/, IO.gets "Quantia: ") do
-      nil -> 
+      nil ->
         IO.puts "Digite apenas números."
         valor()
-      _ -> 
+      _ ->
         [quantia, _] = quantia
         String.to_integer(quantia)
     end
@@ -187,6 +187,6 @@ defmodule Transacao do
     split = round(quantia / taxa)
     usuarios = put_in (usuarios[:stone])[moeda], (usuarios[:stone])[moeda] + split
     IO.write "Taxa de rateio de #{taxa}% para stone. "
-    [quantia - split, usuarios] 
+    [quantia - split, usuarios]
   end
 end
