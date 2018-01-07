@@ -2,6 +2,12 @@ defmodule TransacaoTest do
   use ExUnit.Case
   doctest Transacao
 
+  import ExUnit.CaptureIO
+
+  test "moeda válida" do
+    assert capture_io([input: "AED"], fn -> Transacao.cedula(Financeiro.usr_padrao(), :john) end) == "Qual moeda? "
+  end
+
   test "valida moeda" do
     assert Transacao.ver_cedula(Financeiro.usr_padrao(), :john, :BRL) == :BRL
   end
