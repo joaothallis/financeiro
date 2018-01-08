@@ -33,7 +33,7 @@ defmodule Financeiro do
   def alfa(usuarios, escolha) do
     case escolha do
       "1" ->
-        usuario = acessar(usuarios, escolha)
+        usuario = acessar(usuarios, escolha, entrada("Digite seu nome de usuário: "))
         alternativas(usuarios, usuario)
       "2" ->
         usuario = Cadastro.cria_usuario(usuarios)
@@ -62,8 +62,7 @@ defmodule Financeiro do
   Realiza acesso a conta do usuário.
 
   """
-  def acessar(usuarios, escolha) do
-    usuario = entrada("Digite seu nome de usuário: ")
+  def acessar(usuarios, escolha, usuario) do
     usuario = string_atom(usuario)
     if Consulta.usuario?(usuarios, usuario) == :error do
       IO.puts "Usuário não existe."
@@ -103,10 +102,10 @@ defmodule Financeiro do
       "2" ->
         usuarios = Transacao.deposito(usuarios, usuario, Transacao.cedula(usuarios, usuario), Transacao.valor())
         alternativas(usuarios, usuario)
-      "3" -> 
+      "3" ->
         usuarios = Transacao.transferencia(usuarios, usuario)
         alternativas(usuarios, usuario)
-      "4" -> 
+      "4" ->
         usuarios = Cambio.cambio_moeda(usuarios, usuario)
         alternativas(usuarios, usuario)
       _ ->

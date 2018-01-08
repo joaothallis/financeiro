@@ -13,6 +13,6 @@ defmodule FinanceiroTest do
   end
 
   test "acessa o sistema" do
-    assert capture_io([input: "john"], fn -> Financeiro.acessar(Financeiro.usr_padrao(), :ok) end)
+    assert Financeiro.acessar(Financeiro.usr_padrao(), :ok, "john")
   end
 end
